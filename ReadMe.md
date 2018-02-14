@@ -26,8 +26,8 @@ A fork of the [default volume plasmoid](https://github.com/KDE/plasma-pa/tree/Pl
 ## B) Install via GitHub
 
 ```
-git clone https://github.com/Zren/plasma-applets.git
-cd plasma-applets/org.kde.plasma.volumewin7mixer
+git clone https://github.com/Zren/plasma-applet-volumewin7mixer.git
+cd plasma-applet-volumewin7mixer
 ./install
 ```
 
@@ -37,5 +37,5 @@ To update, run the `./update` script. It will run a `git pull` then reinstall th
 
 Some awesome users seemed to have packaged this applet under plasma5-applets-eventcalendar.
 
-* Arch: (Out of date!) https://aur.archlinux.org/packages/plasma5-applets-volumewin7mixer/
-* Chakra: https://chakralinux.org/ccr/packages.php?ID=7763
+* Arch: https://aur.archlinux.org/packages/plasma5-applets-volumewin7mixer/
+* Chakra: (Out of Date) https://chakralinux.org/ccr/packages.php?ID=7763
