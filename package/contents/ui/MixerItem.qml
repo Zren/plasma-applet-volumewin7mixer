@@ -54,6 +54,7 @@ PlasmaComponents.ListItem {
         } else if (event.key == Qt.Key_8) { PulseObjectCommands.setPercent(PulseObject, 80)
         } else if (event.key == Qt.Key_9) { PulseObjectCommands.setPercent(PulseObject, 90)
         } else if (event.key == Qt.Key_Return) { makeDeviceDefault()
+        } else if (event.key == Qt.Key_Menu) { contextMenu.showBelow(iconLabelButton)
         } else { return // don't accept the key press
         }
         event.accepted = true
