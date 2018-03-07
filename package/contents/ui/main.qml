@@ -439,6 +439,12 @@ DialogApplet {
             id: sinkModel
         }
     }
+    // DynamicFilterModel {
+    //     id: filteredStreamRestoreModel
+    //     sourceModel: StreamRestoreModel {
+    //         id: streamRestoreModel
+    //     }
+    // }
     function findStream(model, predicate) {
         for (var i = 0; i < model.count; i++) {
             var stream = model.get(i)
