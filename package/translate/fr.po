@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: volumewin7mixer \n"
-"Report-Msgid-Bugs-To: https://github.com/Zren/plasma-applets/tree/master/org.kde.plasma.volumewin7mixer\n"
+"Report-Msgid-Bugs-To: https://github.com/Zren/plasma-applet-volumewin7mixer\n"
 "POT-Creation-Date: 2017-12-06 16:01-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
