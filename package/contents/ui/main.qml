@@ -184,7 +184,7 @@ DialogApplet {
 
         MediaController {
             id: mediaController
-            width: mixerItemRow.widthmixerItemRow.width
+            width: mixerItemRow.width
             height: config.mediaControllerHeight
         }
 
