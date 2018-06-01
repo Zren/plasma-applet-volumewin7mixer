@@ -11,6 +11,7 @@ import org.kde.plasma.extras 2.0 as PlasmaExtras
 
 import org.kde.plasma.private.volume 0.1
 
+import "lib"
 import "../code/icon.js" as Icon
 import "../code/sinkcommands.js" as PulseObjectCommands
 
@@ -632,17 +633,10 @@ PlasmaComponents.ListItem {
     
     // https://github.com/KDE/plasma-framework/blob/master/src/declarativeimports/plasmacomponents/qmenu.cpp
     // Example: https://github.com/KDE/plasma-desktop/blob/master/applets/taskmanager/package/contents/ui/ContextMenu.qml
-    PlasmaComponents.ContextMenu {
+    ContextMenu {
         id: contextMenu
 
-        function newSeperator() {
-            return Qt.createQmlObject("import org.kde.plasma.components 2.0 as PlasmaComponents; PlasmaComponents.MenuItem { separator: true }", contextMenu);
-        }
-        function newMenuItem() {
-            return Qt.createQmlObject("import org.kde.plasma.components 2.0 as PlasmaComponents; PlasmaComponents.MenuItem {}", contextMenu);
-        }
-
-        function loadDynamicActions() {
+        onBeforeOpen: {
             contextMenu.clearMenuItems();
 
             // Mute
@@ -743,18 +737,6 @@ PlasmaComponents.ListItem {
                 mixerItem.showPropertiesDialog()
                 main.closeDialog(false)
             });
-        }
-
-        function show(x, y) {
-            loadDynamicActions()
-            open(x, y)
-        }
-
-        function showBelow(item) {
-            visualParent = item
-            placement = PlasmaCore.Types.BottomPosedLeftAlignedPopup
-            loadDynamicActions()
-            openRelative()
         }
     }
 
