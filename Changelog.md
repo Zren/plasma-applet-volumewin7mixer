@@ -1,3 +1,10 @@
+## v23 - June 5 2018
+
+* Add "Profile" submenu for devices to quickly switch HDMI => Speakers for certain laptops, or from Stereo to Surround. Creating a submenu required a workaround to avoid a SegFault (plasmashell crash). While the workaround does work, please report if plasmashell crashes when opening a device's context menu.
+* Don't send multiple "set volume" events when changing a left/right/etc channel volume.
+* Add ability to open the a stream's context menu via the keyboard "Menu" key.
+* Attempts to fix the Media Controller's various glitches.
+
 ## v22 - December 26 2017
 
 * Reimplement mouse wheel mute, wheel to control volume which was accidentally removed in the v21 refactor.
