@@ -445,6 +445,12 @@ DialogApplet {
     //         id: streamRestoreModel
     //     }
     // }
+    DynamicFilterModel {
+        id: filteredCardModel
+        sourceModel: CardModel {
+            id: cardModel
+        }
+    }
     function findStream(model, predicate) {
         for (var i = 0; i < model.count; i++) {
             var stream = model.get(i)

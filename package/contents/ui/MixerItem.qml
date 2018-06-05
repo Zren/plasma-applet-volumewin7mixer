@@ -79,6 +79,25 @@ PlasmaComponents.ListItem {
         }
     }
 
+    function getCard() {
+        // console.log(filteredCardModel, filteredCardModel.count)
+        for (var i = 0; i < filteredCardModel.count; i++) {
+            var card = filteredCardModel.get(i)
+            // console.log(i, card, card.Index, card.Name, card.ActiveProfileIndex, Object.keys(card))
+            if (PulseObject.cardIndex == card.Index) {
+                return card
+            }
+        }
+        return null
+    }
+
+    function setCardProfile(profileIndex) {
+        // console.log('setCardProfile', profileIndex)
+        var card = getCard()
+        // console.log('card.ActiveProfileIndex', card.ActiveProfileIndex, '=>', profileIndex)
+        card.PulseObject.activeProfileIndex = profileIndex
+    }
+
     PlasmaCore.FrameSvgItem {
         id: background
         imagePath: "widgets/listitem"
@@ -697,6 +716,33 @@ PlasmaComponents.ListItem {
                     };
                     menuItem.clicked.connect(setActivePort(i));
                     contextMenu.addMenuItem(menuItem);
+                }
+            }
+
+            // Profiles
+            if (typeof PulseObject.cardIndex === "number") {
+                contextMenu.addMenuItem(newSeperator())
+                var card = mixerItem.getCard()
+                if (card) {
+                    var subMenu = newSubMenu()
+                    subMenu.text = i18n("Profile")
+                    subMenu.parent = contextMenu
+                    contextMenu.addMenuItem(subMenu)
+
+                    var availableProfiles = card.Profiles
+                    // console.log(availableProfiles, availableProfiles.count, availableProfiles.length)
+                    for (var i = 0; i < availableProfiles.length; i++) {
+                        var profile = availableProfiles[i]
+                        // console.log('profile', i, profile.name, profile.description, '(priority: ' + profile.priority + ')')
+                        var menuItem = subMenu.newMenuItem()
+                        menuItem.text = profile.description
+                        // menuItem.enabled = profile.available // Plasma 5.13?
+                        menuItem.checkable = true
+                        menuItem.checked = card.ActiveProfileIndex === i
+                        menuItem.clicked.connect(mixerItem.setCardProfile.bind(null, i))
+                        
+                        subMenu.addMenuItem(menuItem)
+                    }
                 }
             }
 
