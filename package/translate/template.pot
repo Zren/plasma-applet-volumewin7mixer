@@ -1,5 +1,5 @@
 # Translation of volumewin7mixer in LANGUAGE
-# Copyright (C) 2017
+# Copyright (C) 2018
 # This file is distributed under the same license as the volumewin7mixer package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: volumewin7mixer \n"
 "Report-Msgid-Bugs-To: https://github.com/Zren/plasma-applet-volumewin7mixer\n"
-"POT-Creation-Date: 2017-12-06 16:01-0500\n"
+"POT-Creation-Date: 2018-06-05 15:47-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,139 +17,147 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../contents/ui/config/ConfigApplet.qml:30
+#: ../contents/ui/config/ConfigApplet.qml:31
 msgid "Media Keys"
 msgstr ""
 
-#: ../contents/ui/config/ConfigApplet.qml:36
+#: ../contents/ui/config/ConfigApplet.qml:37
 msgid "Volume Up/Down Steps:"
 msgstr ""
 
-#: ../contents/ui/config/ConfigApplet.qml:43
+#: ../contents/ui/config/ConfigApplet.qml:44
 msgid "One step = %1%"
 msgstr ""
 
-#: ../contents/ui/config/ConfigApplet.qml:52
+#: ../contents/ui/config/ConfigApplet.qml:53
 msgid "Mixer"
 msgstr ""
 
-#: ../contents/ui/config/ConfigApplet.qml:60
+#: ../contents/ui/config/ConfigApplet.qml:61
 msgid "Show Ticks every 10%"
 msgstr ""
 
-#: ../contents/ui/config/ConfigApplet.qml:65
+#: ../contents/ui/config/ConfigApplet.qml:66
 msgid "Volume Boost"
 msgstr ""
 
-#: ../contents/ui/config/ConfigApplet.qml:86
+#: ../contents/ui/config/ConfigApplet.qml:87
 msgid "Volume Slider Theme"
 msgstr ""
 
-#: ../contents/ui/config/ConfigApplet.qml:90
+#: ../contents/ui/config/ConfigApplet.qml:91
 msgid "Desktop Theme (%1)"
 msgstr ""
 
-#: ../contents/ui/config/ConfigApplet.qml:97
+#: ../contents/ui/config/ConfigApplet.qml:98
 msgid "Color Theme (Default Look)"
 msgstr ""
 
-#: ../contents/ui/config/ConfigApplet.qml:106
+#: ../contents/ui/config/ConfigApplet.qml:107
 msgid "Light Blue on Grey (Default Look)"
 msgstr ""
 
-#: ../contents/ui/config/ConfigApplet.qml:143
+#: ../contents/ui/config/ConfigApplet.qml:144
 msgid "Options"
 msgstr ""
 
-#: ../contents/ui/config/ConfigApplet.qml:149
+#: ../contents/ui/config/ConfigApplet.qml:150
 msgid "Move all Apps to device when setting default device (when set in with the context menu)"
 msgstr ""
 
-#: ../contents/ui/config/ConfigApplet.qml:154
+#: ../contents/ui/config/ConfigApplet.qml:155
 msgid "Close the popup after setting a default device"
 msgstr ""
 
-#: ../contents/ui/config/ConfigApplet.qml:159
+#: ../contents/ui/config/ConfigApplet.qml:160
 msgid "Show OSD on when changing the volume."
 msgstr ""
 
-#: ../contents/ui/config/ConfigApplet.qml:164
+#: ../contents/ui/config/ConfigApplet.qml:165
 msgid "Volume Feedback: Play popping noise when changing the volume."
 msgstr ""
 
-#: ../contents/ui/config/ConfigApplet.qml:169
-msgid "Show virtual streams."
-msgstr ""
-
-#: ../contents/ui/config/ConfigApplet.qml:177
-msgid "Media Controller"
+#: ../contents/ui/config/ConfigApplet.qml:171
+msgid "Visual Feedback: Visualize current sound."
 msgstr ""
 
 #: ../contents/ui/config/ConfigApplet.qml:183
-msgid "Show Media Controller"
-msgstr ""
-
-#: ../contents/ui/config/ConfigApplet.qml:189
-msgid "Position"
+msgid "Show virtual streams."
 msgstr ""
 
 #: ../contents/ui/config/ConfigApplet.qml:191
-msgid "Top"
+msgid "Media Controller"
 msgstr ""
 
-#: ../contents/ui/config/ConfigApplet.qml:192
-msgid "Bottom"
-msgstr ""
-
-#: ../contents/ui/config/ConfigApplet.qml:198
-msgid "Show Time Elapsed"
+#: ../contents/ui/config/ConfigApplet.qml:197
+msgid "Show Media Controller"
 msgstr ""
 
 #: ../contents/ui/config/ConfigApplet.qml:203
+msgid "Position"
+msgstr ""
+
+#: ../contents/ui/config/ConfigApplet.qml:205
+msgid "Top"
+msgstr ""
+
+#: ../contents/ui/config/ConfigApplet.qml:206
+msgid "Bottom"
+msgstr ""
+
+#: ../contents/ui/config/ConfigApplet.qml:212
+msgid "Show Time Elapsed"
+msgstr ""
+
+#: ../contents/ui/config/ConfigApplet.qml:217
 msgid "Show Time Left"
 msgstr ""
 
-#: ../contents/ui/config/ConfigApplet.qml:208
+#: ../contents/ui/config/ConfigApplet.qml:222
 msgid "Show Total Duration"
 msgstr ""
 
-#: ../contents/ui/config/ConfigApplet.qml:216
+#: ../contents/ui/config/ConfigApplet.qml:230
 msgid "Keyboard Shortcuts"
 msgstr ""
 
-#: ../contents/ui/config/ConfigApplet.qml:223
+#: ../contents/ui/config/ConfigApplet.qml:237
 msgid "Set the Global Shortcut in the Keyboard Shortcuts tab."
 msgstr ""
 
-#: ../contents/ui/config/ConfigApplet.qml:232
+#: ../contents/ui/config/ConfigApplet.qml:246
 msgid "Global Shortcut"
 msgstr ""
 
-#: ../contents/ui/config/ConfigApplet.qml:236
+#: ../contents/ui/config/ConfigApplet.qml:250
 msgid "Selection: Select Previous Stream"
 msgstr ""
 
-#: ../contents/ui/config/ConfigApplet.qml:240
+#: ../contents/ui/config/ConfigApplet.qml:254
 msgid "Selection: Select Next Stream"
 msgstr ""
 
-#: ../contents/ui/config/ConfigApplet.qml:244
+#: ../contents/ui/config/ConfigApplet.qml:258
 msgid "Selection: Increase Volume"
 msgstr ""
 
-#: ../contents/ui/config/ConfigApplet.qml:248
+#: ../contents/ui/config/ConfigApplet.qml:262
 msgid "Selection: Decrease Volume"
 msgstr ""
 
-#: ../contents/ui/config/ConfigApplet.qml:252
+#: ../contents/ui/config/ConfigApplet.qml:266
 msgid "Selection: Make Default Device"
 msgstr ""
 
-#: ../contents/ui/config/ConfigApplet.qml:256
+#: ../contents/ui/config/ConfigApplet.qml:270
 msgid "Selection: Toggle Mute"
 msgstr ""
 
-#: ../contents/ui/config/ConfigApplet.qml:264
+#: ../contents/ui/config/ConfigApplet.qml:274
+msgid "Selection: Open Context Menu"
+msgstr ""
+
+#: ../contents/ui/config/ConfigApplet.qml:282
 msgid "Selection: Set Volume to %1%"
 msgstr ""
 
@@ -157,67 +165,71 @@ msgstr ""
 msgid "<b>Version:</b> %1"
 msgstr ""
 
-#: ../contents/ui/main.qml:138
+#: ../contents/ui/main.qml:150
 msgid "Recording Apps"
 msgstr ""
 
-#: ../contents/ui/main.qml:147
+#: ../contents/ui/main.qml:159
 msgid "Apps"
 msgstr ""
 
-#: ../contents/ui/main.qml:156
+#: ../contents/ui/main.qml:168
 msgid "Mics"
 msgstr ""
 
-#: ../contents/ui/main.qml:165
+#: ../contents/ui/main.qml:177
 msgid "Speakers"
 msgstr ""
 
-#: ../contents/ui/main.qml:466
+#: ../contents/ui/main.qml:490
 msgid "PulseAudio Control"
 msgstr ""
 
-#: ../contents/ui/main.qml:467
+#: ../contents/ui/main.qml:491
 msgid "AlsaMixer"
 msgstr ""
 
-#: ../contents/ui/MediaController.qml:265
+#: ../contents/ui/MediaController.qml:271
 msgctxt "Remaining time for song e.g -5:42"
 msgid "-%1"
 msgstr ""
 
-#: ../contents/ui/MixerItem.qml:148
+#: ../contents/ui/MixerItem.qml:174
 msgid "%1 (Echo Cancelled)"
 msgstr ""
 
-#: ../contents/ui/MixerItem.qml:161
+#: ../contents/ui/MixerItem.qml:187
 msgid "Mic"
 msgstr ""
 
-#: ../contents/ui/MixerItem.qml:165
+#: ../contents/ui/MixerItem.qml:191
 msgid "Speaker"
 msgstr ""
 
-#: ../contents/ui/MixerItem.qml:167
+#: ../contents/ui/MixerItem.qml:193
 msgid "HDMI"
 msgstr ""
 
-#: ../contents/ui/MixerItem.qml:617
+#: ../contents/ui/MixerItem.qml:671
 msgid "Volume Boost (150% Volume)"
 msgstr ""
 
-#: ../contents/ui/MixerItem.qml:640
+#: ../contents/ui/MixerItem.qml:694
 msgid "Show Channels"
 msgstr ""
 
-#: ../contents/ui/MixerItem.qml:674
+#: ../contents/ui/MixerItem.qml:728
+msgid "Profile"
+msgstr ""
+
+#: ../contents/ui/MixerItem.qml:755
 msgid "Echo Cancellation"
 msgstr ""
 
-#: ../contents/ui/MixerItem.qml:685
+#: ../contents/ui/MixerItem.qml:766
 msgid "Listen to Device"
 msgstr ""
 
-#: ../contents/ui/MixerItem.qml:698
+#: ../contents/ui/MixerItem.qml:779
 msgid "Properties"
 msgstr ""
