@@ -9,18 +9,42 @@ PlasmaComponents.ContextMenu {
 	id: contextMenu
 
 	function newSeperator() {
-		return Qt.createQmlObject("import org.kde.plasma.components 2.0 as PlasmaComponents; PlasmaComponents.MenuItem { separator: true }", contextMenu);
+		return Qt.createQmlObject("ContextMenuItem { separator: true }", contextMenu);
 	}
 	function newMenuItem() {
-		return Qt.createQmlObject("import org.kde.plasma.components 2.0 as PlasmaComponents; PlasmaComponents.MenuItem {}", contextMenu);
+		return Qt.createQmlObject("ContextMenuItem {}", contextMenu);
+	}
+	function newSubMenu() {
+		return Qt.createQmlObject("ContextSubMenu {}", contextMenu);
 	}
 
 	property bool clearBeforeOpen: true
 	signal beforeOpen(var menu)
 
+	function removeAllItems() {
+		// console.log('removeAllItems', contextMenu)
+
+		// clearMenuItems() causes a segfault when trying to destroy a submenu.
+		// So we need to manually destroy it as a workaround.
+		for (var i = content.length-1; i >= 0; i--) {
+			var item = content[i]
+			var isSubMenu = item.hasOwnProperty("subContextMenu")
+			// console.log(contextMenu, i, 'destroy', isSubMenu, item.text)
+			if (isSubMenu) {
+				item.subContextMenu.removeAllItems() // Probably only necessary for a sub-sub-menu.
+				item.subContextMenu.destroy() // We need this or it will segfault on the 2nd open.
+			}
+			removeMenuItem(item) // We need this or it will segfault on the 3rd open.
+			item.destroy()
+		}
+	}
+
 	function doBeforeOpen() {
+		// console.log('doBeforeOpen')
+		// console.log('doBeforeOpen.content.length', content.length)
 		if (clearBeforeOpen) {
-			clearMenuItems()
+			removeAllItems()
+			// console.log('doBeforeOpen.clearMenuItems.done')
 		}
 		beforeOpen(contextMenu)
 	}
@@ -39,5 +63,9 @@ PlasmaComponents.ContextMenu {
 		visualParent = item
 		placement = PlasmaCore.Types.BottomPosedLeftAlignedPopup
 		showRelative()
+	}
+
+	Component.onDestruction: {
+		// console.log('contextMenu.onDestruction', contextMenu)
 	}
 }
