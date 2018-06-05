@@ -207,12 +207,18 @@ Item {
                     if (!seekSlider.pressed && !mediaController.keyPressed && !queuedPositionUpdate.running) {
                         // we also don't want passive position updates
                         mediaController.disablePositionUpdate = true
+                        // console.log('mpris2Source.position', mpris2Source.position)
+                        // console.log('\tmpris2Source.length', mpris2Source.length, seekSlider.maximumValue)
+                        if (seekSlider.maximumValue != mpris2Source.length) { // mpris2Source.onLengthChanged isn't always called.
+                            seekSlider.maximumValue = mpris2Source.length
+                        }
                         seekSlider.value = mpris2Source.position
                         mediaController.disablePositionUpdate = false
                     }
                 }
                 onLengthChanged: {
                     mediaController.disablePositionUpdate = true
+                    // console.log('mpris2Source.length', mpris2Source.length)
                     seekSlider.maximumValue = mpris2Source.length
                     mediaController.disablePositionUpdate = false
                 }
