@@ -270,6 +270,10 @@ ConfigPage {
                         "label": i18n("Selection: Toggle Mute"),
                         "keySequence": "M",
                     },
+                    {
+                        "label": i18n("Selection: Open Context Menu"),
+                        "keySequence": "Menu",
+                    },
                 ]
 
                 Component.onCompleted: {
