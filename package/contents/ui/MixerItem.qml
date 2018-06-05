@@ -637,8 +637,6 @@ PlasmaComponents.ListItem {
         id: contextMenu
 
         onBeforeOpen: {
-            contextMenu.clearMenuItems();
-
             // Mute
             var menuItem = newMenuItem();
             menuItem.text = i18ndc("plasma_applet_org.kde.plasma.volume", "Checkable switch for (un-)muting sound output.", "Mute");
