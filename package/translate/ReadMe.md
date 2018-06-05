@@ -1,12 +1,14 @@
 > Version 3 of Zren's i18n scripts.
 
+With KDE Frameworks v5.37 and above, translations are bundled with the *.plasmoid file downloaded from the store.
+
 ## Install Translations
 
-Go to `~/.local/share/plasma/plasmoids/{{plasmoidName}}/locale/` and run `sh ./build --restartplasma`.
+Go to `~/.local/share/plasma/plasmoids/org.kde.plasma.volumewin7mixer/translate/` and run `sh ./build --restartplasma`.
 
 ## New Translations
 
-1. Fill out [`template.pot`](template.pot) with your translations then open a [new issue](https://github.com/Zren/plasma-applets/issues/new), name the file `spanish.txt`, attach the txt file to the issue (drag and drop).
+1. Fill out [`template.pot`](template.pot) with your translations then open a [new issue](https://github.com/Zren/plasma-applet-volumewin7mixer/issues/new), name the file `spanish.txt`, attach the txt file to the issue (drag and drop).
 
 Or if you know how to make a pull request
 
@@ -17,7 +19,7 @@ Or if you know how to make a pull request
 * `./merge` will parse the `i18n()` calls in the `*.qml` files and write it to the `template.pot` file. Then it will merge any changes into the `*.po` language files.
 * `./build` will convert the `*.po` files to it's binary `*.mo` version and move it to `contents/locale/...` which will bundle the translations in the *.plasmoid without needed the user to manually install them.
 * `./install` will convert the `*.po` files to it's binary `*.mo` version and move it to `~/.local/share/locale/...`.
-* `./test fr` will run `./merge` then `./build` then restart plasmashell with `LANGUAGE=fr plasmashell` (which tests the french language).
+* `./test` will run `./merge` then `./install`.
 
 ## Links
 
