@@ -49,7 +49,7 @@ X-KDE-PluginInfo-Category=Multimedia
 X-KDE-PluginInfo-Author=Harald Sitter + Chris Holland
 X-KDE-PluginInfo-Email=zrenfire@gmail.com
 X-KDE-PluginInfo-Version=22
-X-KDE-PluginInfo-Website=https://github.com/Zren/plasma-applets/tree/master/org.kde.plasma.volumewin7mixer
+X-KDE-PluginInfo-Website=https://github.com/Zren/plasma-applet-volumewin7mixer
 X-KDE-PluginInfo-KdeStoreId=1100894
 X-KDE-PluginInfo-License=GPL
 
