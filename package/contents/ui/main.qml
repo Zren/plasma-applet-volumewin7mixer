@@ -32,7 +32,7 @@ import org.kde.kquickcontrolsaddons 2.0 // KCMShell
 
 import org.kde.plasma.private.volume 0.1
 
-import "../code/icon.js" as Icon
+import "../code/Utils.js" as Utils
 import "../code/sinkcommands.js" as PulseObjectCommands
 import "lib"
 
@@ -57,7 +57,7 @@ DialogApplet {
     }
 
     property string displayName: i18nd("plasma_applet_org.kde.plasma.volume", "Audio Volume")
-    property string speakerIcon: sinkModel.defaultSink ? Icon.name(sinkModel.defaultSink.volume, sinkModel.defaultSink.muted) : Icon.name(0, true)
+    property string speakerIcon: Utils.iconNameForStream(sinkModel.defaultSink)
     
     compactItemIcon: speakerIcon
     onCompactItemClicked: {
