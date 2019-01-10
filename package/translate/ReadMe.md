@@ -32,7 +32,7 @@ Or if you know how to make a pull request
 * https://github.com/kotelnik/plasma-applet-redshift-control/tree/master/translations
 
 ## Status
-|Locale | Lines | % Done|
-|-------|-------|-------|
-|Template	|54	|	|
-|fr	|9/54	|16%	|
+|  Locale  |  Lines  | % Done|
+|----------|---------|-------|
+| Template |      54 |       |
+| fr       |   54/54 |  100% |
