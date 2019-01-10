@@ -240,15 +240,15 @@ PlasmaComponents.ListItem {
 			if (typeof value === 'string' && value.length === 0) return;
 			lines.push('<b>' + key + ':</b> ' + value);
 		}
-		addLine('Name', PulseObject.name);
-		addLine('Description', PulseObject.description);
-		addLine('Volume', Math.round(PulseObjectCommands.volumePercent(PulseObject.volume)) + "%");
+		addLine(i18n("Name"), PulseObject.name);
+		addLine(i18n("Description"), PulseObject.description);
+		addLine(i18n("Volume"), Math.round(PulseObjectCommands.volumePercent(PulseObject.volume)) + "%");
 		if (typeof PulseObject.activePortIndex !== 'undefined' && PulseObject.activePortIndex != invalidPortIndex) {
-			addLine('Port', '[' + PulseObject.activePortIndex +'] ' + PulseObject.ports[PulseObject.activePortIndex].description)
+			addLine(i18n("Port"), '[' + PulseObject.activePortIndex +'] ' + PulseObject.ports[PulseObject.activePortIndex].description)
 		}
 		if (typeof PulseObject.deviceIndex !== 'undefined') {
 			if (!usingDefaultDevice) {
-				addLine('Device', '[' + PulseObject.deviceIndex + '] ');
+				addLine(i18n("Device"), '[' + PulseObject.deviceIndex + '] ');
 			}
 		}
 		function addPropertyLine(key) {
