@@ -491,7 +491,7 @@ PlasmaComponents.ListItem {
 				Layout.maximumHeight: mixerItem.volumeSliderWidth
 				Layout.minimumWidth: Layout.maximumWidth
 				Layout.minimumHeight: Layout.maximumHeight
-				anchors.horizontalCenter: parent.horizontalCenter
+				Layout.alignment: Qt.AlignHCenter
 
 				PlasmaCore.IconItem {
 					anchors.fill: parent
