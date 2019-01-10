@@ -213,23 +213,23 @@ msgstr "HDMI"
 
 #: ../contents/ui/MixerItem.qml:243
 msgid "Name"
-msgstr ""
+msgstr "Nom"
 
 #: ../contents/ui/MixerItem.qml:244
 msgid "Description"
-msgstr ""
+msgstr "Description"
 
 #: ../contents/ui/MixerItem.qml:245
 msgid "Volume"
-msgstr ""
+msgstr "Volume"
 
 #: ../contents/ui/MixerItem.qml:247
 msgid "Port"
-msgstr ""
+msgstr "Port"
 
 #: ../contents/ui/MixerItem.qml:251
 msgid "Device"
-msgstr ""
+msgstr "Périphérique"
 
 #: ../contents/ui/MixerItem.qml:671
 msgid "Volume Boost (150% Volume)"
