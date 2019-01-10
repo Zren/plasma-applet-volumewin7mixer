@@ -43,6 +43,7 @@ Window {
 				text: section
 				font.bold: true
 				font.pixelSize: 16
+				z: -1 // Make sure the section delegate is drawn under the column heading
 			}
 		}
 	}
