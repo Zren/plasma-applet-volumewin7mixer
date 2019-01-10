@@ -9,8 +9,8 @@ Window {
 	id: pulseObjectDialog
 
 	property var pulseObject
-	width: 600
-	height: 600
+	width: 600 * units.devicePixelRatio
+	height: 600 * units.devicePixelRatio
 	title: pulseObject.name + ' — ' + i18nd("plasma_applet_org.kde.plasma.volume", "Audio Volume")
 
 
@@ -29,11 +29,14 @@ Window {
 			model: ListModel {}
 
 			TableViewColumn {
+				id: keyColumn
 				role: "key"
+				width: 200 * units.devicePixelRatio
 			}
 			TableViewColumn {
+				id: valueColumn
 				role: "value"
-				width: 400
+				width: 360 * units.devicePixelRatio
 			}
 
 			style: TableViewStyle {} // Ignore panel theme (which might be black bg)
@@ -42,7 +45,7 @@ Window {
 			section.delegate: Label {
 				text: section
 				font.bold: true
-				font.pixelSize: 16
+				font.pixelSize: 16 * units.devicePixelRatio
 				z: -1 // Make sure the section delegate is drawn under the column heading
 			}
 		}
