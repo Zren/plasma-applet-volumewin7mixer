@@ -39,6 +39,7 @@ ConfigPage {
 				SpinBox {
 					id: volumeUpDownSteps
 					minimumValue: 1
+					maximumValue: 1000
 				}
 				Label {
 					text: i18n("One step = %1%", Math.round(1/volumeUpDownSteps.value * 100))
