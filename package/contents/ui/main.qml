@@ -72,33 +72,33 @@ DialogApplet {
 
 	Plasmoid.icon: {
 		if (mpris2Source.hasPlayer && mpris2Source.albumArt) {
-			return mpris2Source.albumArt;
+			return mpris2Source.albumArt
 		} else {
-			return speakerIcon;
+			return speakerIcon
 		}
 	}
 	Plasmoid.toolTipMainText: {
 		if (mpris2Source.hasPlayer && mpris2Source.track) {
-			return mpris2Source.track;
+			return mpris2Source.track
 		} else {
-			return displayName;
+			return displayName
 		}
 	}
 	Plasmoid.toolTipSubText: {
-		var lines = [];
+		var lines = []
 		if (mpris2Source.hasPlayer && mpris2Source.artist) {
 			if (mpris2Source.isPaused) {
-				lines.push(mpris2Source.artist ? i18ndc("plasma_applet_org.kde.plasma.mediacontroller", "Artist of the song", "by %1 (paused)", mpris2Source.artist) : i18nd("plasma_applet_org.kde.plasma.mediacontroller", "Paused"));
+				lines.push(mpris2Source.artist ? i18ndc("plasma_applet_org.kde.plasma.mediacontroller", "Artist of the song", "by %1 (paused)", mpris2Source.artist) : i18nd("plasma_applet_org.kde.plasma.mediacontroller", "Paused"))
 			} else if (mpris2Source.artist) {
-				lines.push(i18ndc("plasma_applet_org.kde.plasma.mediacontroller", "Artist of the song", "by %1", mpris2Source.artist));
+				lines.push(i18ndc("plasma_applet_org.kde.plasma.mediacontroller", "Artist of the song", "by %1", mpris2Source.artist))
 			}
 		}
 		if (sinkModel.defaultSink) {
-			var sinkVolumePercent = Math.round(PulseObjectCommands.volumePercent(sinkModel.defaultSink.volume));
-			lines.push(i18nd("plasma_applet_org.kde.plasma.volume", "Volume at %1%", sinkVolumePercent));
-			lines.push(sinkModel.defaultSink.description);
+			var sinkVolumePercent = Math.round(PulseObjectCommands.volumePercent(sinkModel.defaultSink.volume))
+			lines.push(i18nd("plasma_applet_org.kde.plasma.volume", "Volume at %1%", sinkVolumePercent))
+			lines.push(sinkModel.defaultSink.description)
 		}
-		return lines.join('\n');
+		return lines.join('\n')
 	}
 
 
@@ -252,69 +252,69 @@ DialogApplet {
 
 	function showOsd(volume) {
 		if (plasmoid.configuration.showOsd) {
-			osd.show(PulseObjectCommands.volumePercent(volume));
+			osd.show(PulseObjectCommands.volumePercent(volume))
 		}
 	}
 
 	function increaseDefaultSinkVolume() {
 		if (!sinkModel.defaultSink) {
-			return;
+			return
 		}
-		sinkModel.defaultSink.muted = false;
-		var volume = PulseObjectCommands.increaseVolume(sinkModel.defaultSink);
-		showOsd(volume);
-		playFeedback();
+		sinkModel.defaultSink.muted = false
+		var volume = PulseObjectCommands.increaseVolume(sinkModel.defaultSink)
+		showOsd(volume)
+		playFeedback()
 	}
 
 	function decreaseDefaultSinkVolume() {
 		if (!sinkModel.defaultSink) {
-			return;
+			return
 		}
-		sinkModel.defaultSink.muted = false;
-		var volume = PulseObjectCommands.decreaseVolume(sinkModel.defaultSink);
-		showOsd(volume);
-		playFeedback();
+		sinkModel.defaultSink.muted = false
+		var volume = PulseObjectCommands.decreaseVolume(sinkModel.defaultSink)
+		showOsd(volume)
+		playFeedback()
 	}
 
 	function toggleDefaultSinksMute() {
 		if (!sinkModel.defaultSink) {
-			return;
+			return
 		}
-		var toMute = PulseObjectCommands.toggleMute(sinkModel.defaultSink);
-		showOsd(toMute ? 0 : sinkModel.defaultSink.volume);
-		playFeedback();
+		var toMute = PulseObjectCommands.toggleMute(sinkModel.defaultSink)
+		showOsd(toMute ? 0 : sinkModel.defaultSink.volume)
+		playFeedback()
 	}
 
 	function showMicrophoneOsd(volume) {
 		if (plasmoid.configuration.showOsd) {
-			osd.showMicrophone(PulseObjectCommands.volumePercent(volume));
+			osd.showMicrophone(PulseObjectCommands.volumePercent(volume))
 		}
 	}
 
 	function increaseDefaultSourceVolume() {
 		if (!sourceModel.defaultSource) {
-			return;
+			return
 		}
-		sourceModel.defaultSource.muted = false;
-		var volume = PulseObjectCommands.increaseVolume(sourceModel.defaultSource);
-		showMicrophoneOsd(volume);
+		sourceModel.defaultSource.muted = false
+		var volume = PulseObjectCommands.increaseVolume(sourceModel.defaultSource)
+		showMicrophoneOsd(volume)
 	}
 	
 	function decreaseDefaultSourceVolume() {
 		if (!sourceModel.defaultSource) {
-			return;
+			return
 		}
-		sourceModel.defaultSource.muted = false;
-		var volume = PulseObjectCommands.decreaseVolume(sourceModel.defaultSource);
-		showMicrophoneOsd(volume);
+		sourceModel.defaultSource.muted = false
+		var volume = PulseObjectCommands.decreaseVolume(sourceModel.defaultSource)
+		showMicrophoneOsd(volume)
 	}
 
 	function toggleDefaultSourceMute() {
 		if (!sourceModel.defaultSource) {
-			return;
+			return
 		}
-		var toMute = PulseObjectCommands.toggleMute(sourceModel.defaultSource);
-		showOsd(toMute ? 0 : sourceModel.defaultSource.volume);
+		var toMute = PulseObjectCommands.toggleMute(sourceModel.defaultSource)
+		showOsd(toMute ? 0 : sourceModel.defaultSource.volume)
 	}
 
 	// Connections {
@@ -400,12 +400,12 @@ DialogApplet {
 
 	function playFeedback(sinkIndex) {
 		if (!plasmoid.configuration.volumeChangeFeedback) {
-			return;
+			return
 		}
 		if (sinkIndex == undefined) {
-			sinkIndex = sinkModel.preferredSink.index;
+			sinkIndex = sinkModel.preferredSink.index
 		}
-		feedback.play(sinkIndex);
+		feedback.play(sinkIndex)
 	}
 
 	Mpris2DataSource {
@@ -481,13 +481,13 @@ DialogApplet {
 			plasmoid.activationTogglesExpanded = true
 		}
 
-		plasmoid.setAction("pavucontrol", i18n("PulseAudio Control"), "configure");
-		plasmoid.setAction("alsamixer", i18n("AlsaMixer"), "configure");
+		plasmoid.setAction("pavucontrol", i18n("PulseAudio Control"), "configure")
+		plasmoid.setAction("alsamixer", i18n("AlsaMixer"), "configure")
 
-		var widgetName = i18nd("plasma_applet_org.kde.plasma.volume", "Audio Volume");
-		var configureText = i18ndc("libplasma5", "%1 is the name of the applet", "%1 Settings...", widgetName); // plasma-framework
-		plasmoid.setAction("configure", configureText, "configure");
+		var widgetName = i18nd("plasma_applet_org.kde.plasma.volume", "Audio Volume")
+		var configureText = i18ndc("libplasma5", "%1 is the name of the applet", "%1 Settings...", widgetName) // plasma-framework
+		plasmoid.setAction("configure", configureText, "configure")
 
-		// plasmoid.action("configure").trigger();
+		// plasmoid.action("configure").trigger()
 	}
 }
