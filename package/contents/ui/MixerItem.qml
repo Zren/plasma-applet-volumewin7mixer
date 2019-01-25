@@ -12,7 +12,7 @@ import org.kde.plasma.extras 2.0 as PlasmaExtras
 import org.kde.plasma.private.volume 0.1
 
 import "lib"
-import "../code/icon.js" as Icon
+import "./code/Icon.js" as Icon
 import "./code/PulseObjectCommands.js" as PulseObjectCommands
 
 PlasmaComponents.ListItem {

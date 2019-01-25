@@ -1,5 +1,5 @@
 .pragma library
-.import "../code/icon.js" as Icon
+.import "./Icon.js" as Icon
 
 function isDummyOutput(output) {
 	// DEFAULT_SINK_NAME in module-always-sink.c
