@@ -30,6 +30,7 @@ function setVolume(pulseObject, volume) {
 
 function addVolume(pulseObject, step) {
 	// console.log('addVolume', pulseObject, step);
+	step = Math.ceil(step)
 	var volume = bound(pulseObject.volume + step, 0, maximumValue);
 	if (maximumValue - volume < step) {
 		volume = maximumValue;
