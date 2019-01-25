@@ -40,10 +40,6 @@ DialogApplet {
 	id: main
 
 	AppletConfig { id: config }
-
-	property int maxVolumePercent: 100.0 // plasmoid.configuration.maximumVolume
-	property int maxVolumeValue: Math.round(maxVolumePercent * PulseAudio.NormalVolume / 100.0)
-	property int volumeStep: Math.round(Plasmoid.configuration.volumeStep * PulseAudio.NormalVolume / 100.0)
 	
 	property string draggedStreamType: ''
 	property QtObject draggedStream: null
