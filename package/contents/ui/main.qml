@@ -28,9 +28,7 @@ import org.kde.plasma.components 2.0 as PlasmaComponents
 import org.kde.plasma.extras 2.0 as PlasmaExtras
 import org.kde.plasma.plasmoid 2.0
 
-import org.kde.kquickcontrolsaddons 2.0 // KCMShell
-
-import org.kde.plasma.private.volume 0.1
+import org.kde.plasma.private.volume 0.1 as PlasmaVolume
 
 import "./code/Utils.js" as Utils
 import "./code/PulseObjectCommands.js" as PulseObjectCommands
@@ -338,7 +336,7 @@ DialogApplet {
 	// 	}
 	// }
 
-	GlobalActionCollection {
+	PlasmaVolume.GlobalActionCollection {
 		// KGlobalAccel cannot transition from kmix to something else, so if
 		// the user had a custom shortcut set for kmix those would get lost.
 		// To avoid this we hijack kmix name and actions. Entirely mental but
@@ -350,37 +348,37 @@ DialogApplet {
 		//   actions: increase_volume, decrease_volume, mute
 		name: "kmix"
 		displayName: main.displayName
-		GlobalAction {
+		PlasmaVolume.GlobalAction {
 			objectName: "increase_volume"
 			text: i18nd("plasma_applet_org.kde.plasma.volume", "Increase Volume")
 			shortcut: Qt.Key_VolumeUp
 			onTriggered: increaseDefaultSinkVolume()
 		}
-		GlobalAction {
+		PlasmaVolume.GlobalAction {
 			objectName: "decrease_volume"
 			text: i18nd("plasma_applet_org.kde.plasma.volume", "Decrease Volume")
 			shortcut: Qt.Key_VolumeDown
 			onTriggered: decreaseDefaultSinkVolume()
 		}
-		GlobalAction {
+		PlasmaVolume.GlobalAction {
 			objectName: "mute"
 			text: i18nd("plasma_applet_org.kde.plasma.volume", "Mute")
 			shortcut: Qt.Key_VolumeMute
 			onTriggered: toggleDefaultSinksMute()
 		}
-		GlobalAction {
+		PlasmaVolume.GlobalAction {
 			objectName: "increase_microphone_volume"
 			text: i18nd("plasma_applet_org.kde.plasma.volume", "Increase Microphone Volume")
 			shortcut: Qt.Key_MicVolumeUp
 			onTriggered: increaseDefaultSourceVolume()
 		}
-		GlobalAction {
+		PlasmaVolume.GlobalAction {
 			objectName: "decrease_microphone_volume"
 			text: i18nd("plasma_applet_org.kde.plasma.volume", "Decrease Microphone Volume")
 			shortcut: Qt.Key_MicVolumeDown
 			onTriggered: decreaseDefaultSourceVolume()
 		}
-		GlobalAction {
+		PlasmaVolume.GlobalAction {
 			objectName: "mic_mute"
 			text: i18nd("plasma_applet_org.kde.plasma.volume", "Mute Microphone")
 			shortcut: Qt.Key_MicMute
@@ -392,11 +390,11 @@ DialogApplet {
 		id: executable
 	}
 
-	VolumeOSD {
+	PlasmaVolume.VolumeOSD {
 		id: osd
 	}
 
-	VolumeFeedback {
+	PlasmaVolume.VolumeFeedback {
 		id: feedback
 	}
 
@@ -417,33 +415,33 @@ DialogApplet {
 	// https://github.com/KDE/plasma-pa/tree/master/src/kcm/package/contents/ui
 	DynamicFilterModel {
 		id: appsModel
-		sourceModel: SinkInputModel {}
+		sourceModel: PlasmaVolume.SinkInputModel {}
 	}
 	DynamicFilterModel {
 		id: appOutputsModel
-		sourceModel: SourceOutputModel {}
+		sourceModel: PlasmaVolume.SourceOutputModel {}
 	}
 	DynamicFilterModel {
 		id: filteredSourceModel
-		sourceModel: SourceModel {
+		sourceModel: PlasmaVolume.SourceModel {
 			id: sourceModel
 		}
 	}
 	DynamicFilterModel {
 		id: filteredSinkModel
-		sourceModel: SinkModel {
+		sourceModel: PlasmaVolume.SinkModel {
 			id: sinkModel
 		}
 	}
 	// DynamicFilterModel {
 	// 	id: filteredStreamRestoreModel
-	// 	sourceModel: StreamRestoreModel {
+	// 	sourceModel: PlasmaVolume.StreamRestoreModel {
 	// 		id: streamRestoreModel
 	// 	}
 	// }
 	DynamicFilterModel {
 		id: filteredCardModel
-		sourceModel: CardModel {
+		sourceModel: PlasmaVolume.CardModel {
 			id: cardModel
 		}
 	}
