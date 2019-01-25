@@ -1,4 +1,4 @@
-# Translation of volumewin7mixer in LANGUAGE
+# Translation of volumewin7mixer in nl_NL
 # Copyright (C) 2019
 # This file is distributed under the same license as the volumewin7mixer package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
@@ -6,18 +6,17 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: volumewin7mixer\n"
-"Report-Msgid-Bugs-To: https://github.com/Zren/plasma-applet-"
-"volumewin7mixer\n"
+"Report-Msgid-Bugs-To: https://github.com/Zren/plasma-applet-volumewin7mixer\n"
 "POT-Creation-Date: 2019-01-09 19:41-0500\n"
 "PO-Revision-Date: 2019-01-25 14:39+0100\n"
+"Last-Translator: Heimen Stoffels <vistausss@outlook.com>\n"
 "Language-Team: Dutch <vistausss@outlook.com\n"
+"Language: nl_NL\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 2.1.1\n"
-"Last-Translator: Heimen Stoffels <vistausss@outlook.com>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Language: nl_NL\n"
 
 #: ../contents/ui/config/ConfigApplet.qml:31
 msgid "Media Keys"
@@ -64,12 +63,8 @@ msgid "Options"
 msgstr "Opties"
 
 #: ../contents/ui/config/ConfigApplet.qml:150
-msgid ""
-"Move all Apps to device when setting default device (when set in with the "
-"context menu)"
-msgstr ""
-"Alle apps overschakelen naar apparaat bij instellen van standaardapparaat "
-"(indien ingesteld via het rechtermuisknopmenu)"
+msgid "Move all Apps to device when setting default device (when set in with the context menu)"
+msgstr "Alle apps overschakelen naar apparaat bij instellen van standaardapparaat (indien ingesteld via het rechtermuisknopmenu)"
 
 #: ../contents/ui/config/ConfigApplet.qml:155
 msgid "Close the popup after setting a default device"
@@ -81,8 +76,7 @@ msgstr "Melding tonen bij het volume-aanpassingen"
 
 #: ../contents/ui/config/ConfigApplet.qml:165
 msgid "Volume Feedback: Play popping noise when changing the volume."
-msgstr ""
-"Volumeterugkoppeling: plofgeluid afspelen tijdens volume-aanpassingen"
+msgstr "Volumeterugkoppeling: plofgeluid afspelen tijdens volume-aanpassingen"
 
 #: ../contents/ui/config/ConfigApplet.qml:171
 msgid "Visual Feedback: Visualize current sound."
