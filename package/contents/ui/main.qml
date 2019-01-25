@@ -33,7 +33,7 @@ import org.kde.kquickcontrolsaddons 2.0 // KCMShell
 import org.kde.plasma.private.volume 0.1
 
 import "../code/Utils.js" as Utils
-import "../code/sinkcommands.js" as PulseObjectCommands
+import "./code/PulseObjectCommands.js" as PulseObjectCommands
 import "lib"
 
 DialogApplet {

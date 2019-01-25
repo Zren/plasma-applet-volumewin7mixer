@@ -13,7 +13,7 @@ import org.kde.plasma.private.volume 0.1
 
 import "lib"
 import "../code/icon.js" as Icon
-import "../code/sinkcommands.js" as PulseObjectCommands
+import "./code/PulseObjectCommands.js" as PulseObjectCommands
 
 PlasmaComponents.ListItem {
 	id: mixerItem
