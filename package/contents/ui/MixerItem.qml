@@ -1,15 +1,10 @@
 import QtQuick 2.0
 import QtQuick.Layouts 1.0
 import QtQuick.Controls 1.0
-import QtQuick.Controls.Styles.Plasma 2.0 as PlasmaStyles
 
-import org.kde.kquickcontrolsaddons 2.0
 import org.kde.draganddrop 2.0
 import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.components 2.0 as PlasmaComponents
-import org.kde.plasma.extras 2.0 as PlasmaExtras
-
-import org.kde.plasma.private.volume 0.1
 
 import "lib"
 import "./code/Icon.js" as Icon
@@ -67,10 +62,10 @@ PlasmaComponents.ListItem {
 			if (plasmoid.configuration.moveAllAppsOnSetDefault) {
 				// console.log(appsModel, appsModel.count)
 				for (var i = 0; i < appsModel.count; i++) {
-					var stream = appsModel.get(i); 
-					stream = stream.PulseObject;
+					var stream = appsModel.get(i)
+					stream = stream.PulseObject
 					// console.log(i, stream, stream.name, stream.deviceIndex, PulseObject.index)
-					stream.deviceIndex = PulseObject.index;
+					stream.deviceIndex = PulseObject.index
 				}
 			}
 			if (plasmoid.configuration.closeOnSetDefault) {
@@ -118,11 +113,11 @@ PlasmaComponents.ListItem {
 	property string icon: {
 		if (mixerItemType == 'SinkInput') {
 			// App
-			var client = PulseObject.client;
+			var client = PulseObject.client
 			// Virtual streams don't have a valid client object, force a default icon for them
 			if (client) {
 				if (client.properties['application.icon_name']) {
-					return client.properties['application.icon_name'].toLowerCase();
+					return client.properties['application.icon_name'].toLowerCase()
 				} else if (client.properties['application.process.binary']) {
 					var binary = client.properties['application.process.binary'].toLowerCase()
 					// FIXME: I think this should do a reverse-desktop-file lookup
@@ -130,38 +125,38 @@ PlasmaComponents.ListItem {
 					// At any rate we need to attempt mapping binary to desktop file
 					// such that we could get the icon.
 					if (binary === 'chrome' || binary === 'chromium' || binary === 'chrome (deleted)') {
-						return 'google-chrome';
+						return 'google-chrome'
 					}
-					return binary;
+					return binary
 				}
-				return 'unknown';
+				return 'unknown'
 			} else {
-				return 'audio-card';
+				return 'audio-card'
 			}
 		} else if (mixerItemType == 'Sink') {
 			// Speaker
 			if (PulseObject.activePortIndex != invalidPortIndex) { // not "Invalid Port" (eg: echo-cancel)
-				var portName = PulseObject.ports[PulseObject.activePortIndex].name;
+				var portName = PulseObject.ports[PulseObject.activePortIndex].name
 				if (portName.indexOf('headphones') >= 0) { // Eg: analog-output-headphones
-					return 'audio-headphones';
+					return 'audio-headphones'
 				}
 			}
 			if (startsWith(PulseObject.name, 'alsa_output.') && PulseObject.name.indexOf('.hdmi-') >= 0) {
-				// return Qt.resolvedUrl('../icons/hdmi.svg');
-				return 'video-television';
+				// return Qt.resolvedUrl('../icons/hdmi.svg')
+				return 'video-television'
 			}
 			if (PulseObject.name.indexOf('bluez_sink.') === 0) {
-				return 'preferences-system-bluetooth';
+				return 'preferences-system-bluetooth'
 			}
-			return 'speaker';
+			return 'speaker'
 		} else if (mixerItemType == 'Source') {
 			// Microphone
-			return 'mic-on';
+			return 'mic-on'
 		} else if (mixerItemType == 'SourceOutput') {
 			// Recording Apps
-			return 'mic-on';
+			return 'mic-on'
 		} else {
-			return 'unknown';
+			return 'unknown'
 		}
 	}
 
@@ -194,13 +189,13 @@ PlasmaComponents.ListItem {
 			}
 		}
 
-		var appName = PulseObject.properties['application.name'];
+		var appName = PulseObject.properties['application.name']
 		if (appName) {
-			return appName;
+			return appName
 		}
 
 		if (PulseObject.description) {
-			return PulseObject.description;
+			return PulseObject.description
 		}
 
 		return name
@@ -234,35 +229,35 @@ PlasmaComponents.ListItem {
 
 	property string tooltipSubText: {
 		// maximum of 8 visible lines. Extra lines are cut off.
-		var lines = [];
+		var lines = []
 		function addLine(key, value) {
-			if (typeof value === 'undefined') return;
-			if (typeof value === 'string' && value.length === 0) return;
-			lines.push('<b>' + key + ':</b> ' + value);
+			if (typeof value === 'undefined') return
+			if (typeof value === 'string' && value.length === 0) return
+			lines.push('<b>' + key + ':</b> ' + value)
 		}
-		addLine(i18n("Name"), PulseObject.name);
-		addLine(i18n("Description"), PulseObject.description);
-		addLine(i18n("Volume"), Math.round(PulseObjectCommands.volumePercent(PulseObject.volume)) + "%");
+		addLine(i18n("Name"), PulseObject.name)
+		addLine(i18n("Description"), PulseObject.description)
+		addLine(i18n("Volume"), Math.round(PulseObjectCommands.volumePercent(PulseObject.volume)) + "%")
 		if (typeof PulseObject.activePortIndex !== 'undefined' && PulseObject.activePortIndex != invalidPortIndex) {
 			addLine(i18n("Port"), '[' + PulseObject.activePortIndex +'] ' + PulseObject.ports[PulseObject.activePortIndex].description)
 		}
 		if (typeof PulseObject.deviceIndex !== 'undefined') {
 			if (!usingDefaultDevice) {
-				addLine(i18n("Device"), '[' + PulseObject.deviceIndex + '] ');
+				addLine(i18n("Device"), '[' + PulseObject.deviceIndex + '] ')
 			}
 		}
 		function addPropertyLine(key) {
-			addLine(key, PulseObject.properties[key]);
+			addLine(key, PulseObject.properties[key])
 		}
-		addPropertyLine('alsa.mixer_name');
-		addPropertyLine('application.process.binary');
-		addPropertyLine('application.process.id');
-		addPropertyLine('application.process.user');
+		addPropertyLine('alsa.mixer_name')
+		addPropertyLine('application.process.binary')
+		addPropertyLine('application.process.id')
+		addPropertyLine('application.process.user')
 
 		// for (var key in PulseObject.properties) {
-		// 	lines.push('<b>' + key + ':</b> ' + PulseObject.properties[key]);
+		// 	lines.push('<b>' + key + ':</b> ' + PulseObject.properties[key])
 		// }
-		return lines.join('<br>');
+		return lines.join('<br>')
 	}
 
 	DropArea {
@@ -295,24 +290,24 @@ PlasmaComponents.ListItem {
 
 	function logObj(obj) {
 		for (var key in obj) {
-			if (typeof obj[key] === 'function') continue;
+			if (typeof obj[key] === 'function') continue
 			console.log(obj, key, obj[key])
 		}
 	}
 
 	function logPulseObj(obj) {
-		logObj(obj);
+		logObj(obj)
 		if (typeof obj.ports !== 'undefined') {
 			for (var i = 0; i < obj.ports.length; i++) {
-				logObj(obj.ports[i]);
+				logObj(obj.ports[i])
 			}
 		}
 		if (typeof obj.properties !== 'undefined') {
-			logObj(obj.properties);
+			logObj(obj.properties)
 		}
 		if (typeof obj.client !== 'undefined') {
-			logObj(obj.client);
-			logObj(obj.client.properties);
+			logObj(obj.client)
+			logObj(obj.client.properties)
 		}
 	}
 
@@ -419,9 +414,9 @@ PlasmaComponents.ListItem {
 						slider.ignoreValueChanges = true
 						mixerItem.ignoreValueChanges = mixerItem.shouldIgnoreVolumeChanges()
 						if (!mixerItem.isVolumeBoosted && PulseObject.volume > 66000) {
-							mixerItem.isVolumeBoosted = true;
+							mixerItem.isVolumeBoosted = true
 						}
-						value = PulseObject.volume;
+						value = PulseObject.volume
 						// console.log('slider.ignoreValueChanges = oldIgnoreValueChanges', slider.ignoreValueChanges, oldIgnoreValueChanges)
 						slider.ignoreValueChanges = oldIgnoreValueChanges
 						mixerItem.ignoreValueChanges = mixerItem.shouldIgnoreVolumeChanges()
@@ -431,10 +426,10 @@ PlasmaComponents.ListItem {
 						// console.log('onValueChanged', slider.ready && !mixerItem.ignoreValueChanges ? 'set' : 'ignored', -1, value)
 						if (slider.ready && !mixerItem.ignoreValueChanges) {
 							// console.log('setVolume', value)
-							PulseObjectCommands.setVolume(PulseObject, value);
+							PulseObjectCommands.setVolume(PulseObject, value)
 
 							if (!pressed) {
-								updateTimer.restart();
+								updateTimer.restart()
 							}
 						}
 					}
@@ -449,7 +444,7 @@ PlasmaComponents.ListItem {
 							// Otherwise it might be that the slider is at v10
 							// whereas PA rejected the volume change and is
 							// still at v15 (e.g.).
-							updateTimer.restart();
+							updateTimer.restart()
 						}
 					}
 
@@ -657,65 +652,65 @@ PlasmaComponents.ListItem {
 
 		onBeforeOpen: {
 			// Mute
-			var menuItem = newMenuItem();
-			menuItem.text = i18ndc("plasma_applet_org.kde.plasma.volume", "Checkable switch for (un-)muting sound output.", "Mute");
-			menuItem.checkable = true;
-			menuItem.checked = PulseObject.muted;
+			var menuItem = newMenuItem()
+			menuItem.text = i18ndc("plasma_applet_org.kde.plasma.volume", "Checkable switch for (un-)muting sound output.", "Mute")
+			menuItem.checkable = true
+			menuItem.checked = PulseObject.muted
 			menuItem.clicked.connect(function() {
 				PulseObject.muted = !PulseObject.muted
-			});
-			contextMenu.addMenuItem(menuItem);
+			})
+			contextMenu.addMenuItem(menuItem)
 
 			// Volume Boost
-			var menuItem = newMenuItem();
-			menuItem.text = i18n("Volume Boost (150% Volume)");
-			menuItem.checkable = true;
+			var menuItem = newMenuItem()
+			menuItem.text = i18n("Volume Boost (150% Volume)")
+			menuItem.checkable = true
 			menuItem.checked = mixerItem.isVolumeBoosted
 			menuItem.clicked.connect(function() {
 				mixerItem.isVolumeBoosted = !mixerItem.isVolumeBoosted
-			});
-			contextMenu.addMenuItem(menuItem);
+			})
+			contextMenu.addMenuItem(menuItem)
 
 			// Default
 			if (typeof PulseObject.default === "boolean") {
-				var menuItem = newMenuItem();
-				menuItem.text = i18ndc("plasma_applet_org.kde.plasma.volume", "Checkable switch to change the current default output.", "Default");
-				menuItem.checkable = true;
+				var menuItem = newMenuItem()
+				menuItem.text = i18ndc("plasma_applet_org.kde.plasma.volume", "Checkable switch to change the current default output.", "Default")
+				menuItem.checkable = true
 				menuItem.checked = PulseObject.default
 				menuItem.clicked.connect(function() {
 					mixerItem.makeDeviceDefault()
-				});
-				contextMenu.addMenuItem(menuItem);
+				})
+				contextMenu.addMenuItem(menuItem)
 			}
 
 			// Channels
 			if (mixerItem.hasChannels) {
-				var menuItem = newMenuItem();
-				menuItem.text = i18n("Show Channels");
-				menuItem.checkable = true;
+				var menuItem = newMenuItem()
+				menuItem.text = i18n("Show Channels")
+				menuItem.checkable = true
 				menuItem.checked = mixerItem.showChannels
 				menuItem.clicked.connect(function() {
 					mixerItem.showChannels = !mixerItem.showChannels
-				});
-				contextMenu.addMenuItem(menuItem);
+				})
+				contextMenu.addMenuItem(menuItem)
 			}
 
 			// Ports
 			if (PulseObject.ports && PulseObject.ports.length > 1) {
-				contextMenu.addMenuItem(newSeperator());
+				contextMenu.addMenuItem(newSeperator())
 				for (var i = 0; i < PulseObject.ports.length; i++) {
-					var port = PulseObject.ports[i];
-					var menuItem = newMenuItem();
-					menuItem.text = '[' + i + '] ' + port.description;
-					menuItem.checkable = true;
-					menuItem.checked = i === PulseObject.activePortIndex;
+					var port = PulseObject.ports[i]
+					var menuItem = newMenuItem()
+					menuItem.text = '[' + i + '] ' + port.description
+					menuItem.checkable = true
+					menuItem.checked = i === PulseObject.activePortIndex
 					var setActivePort = function(portIndex){
 						return function() {
-							PulseObject.activePortIndex = portIndex;
-						};
-					};
-					menuItem.clicked.connect(setActivePort(i));
-					contextMenu.addMenuItem(menuItem);
+							PulseObject.activePortIndex = portIndex
+						}
+					}
+					menuItem.clicked.connect(setActivePort(i))
+					contextMenu.addMenuItem(menuItem)
 				}
 			}
 
@@ -748,39 +743,39 @@ PlasmaComponents.ListItem {
 
 			// Modules: Source
 			if (mixerItemType == 'Source') {
-				contextMenu.addMenuItem(newSeperator());
+				contextMenu.addMenuItem(newSeperator())
 
 				// module-echo-cancel
-				var menuItem = newMenuItem();
-				menuItem.text = i18n("Echo Cancellation");
-				menuItem.enabled = !PulseObjectCommands.hasIdProperty(PulseObject, 'echo_cancel.source');
-				menuItem.checkable = true;
-				menuItem.checked = mixerItem.hasModuleEchoCancel;
+				var menuItem = newMenuItem()
+				menuItem.text = i18n("Echo Cancellation")
+				menuItem.enabled = !PulseObjectCommands.hasIdProperty(PulseObject, 'echo_cancel.source')
+				menuItem.checkable = true
+				menuItem.checked = mixerItem.hasModuleEchoCancel
 				menuItem.clicked.connect(function() {
 					PulseObjectCommands.toggleModuleEchoCancel(PulseObject)
-				});
-				contextMenu.addMenuItem(menuItem);
+				})
+				contextMenu.addMenuItem(menuItem)
 
 				// module-loopback
-				var menuItem = newMenuItem();
-				menuItem.text = i18n("Listen to Device");
-				menuItem.enabled = !mixerItem.hasModuleEchoCancel && !PulseObjectCommands.hasIdProperty(PulseObject, 'loopback.source');
-				menuItem.checkable = true;
-				menuItem.checked = mixerItem.hasModuleLoopback;
+				var menuItem = newMenuItem()
+				menuItem.text = i18n("Listen to Device")
+				menuItem.enabled = !mixerItem.hasModuleEchoCancel && !PulseObjectCommands.hasIdProperty(PulseObject, 'loopback.source')
+				menuItem.checkable = true
+				menuItem.checked = mixerItem.hasModuleLoopback
 				menuItem.clicked.connect(function() {
 					PulseObjectCommands.toggleModuleLoopback(PulseObject)
-				});
-				contextMenu.addMenuItem(menuItem);
+				})
+				contextMenu.addMenuItem(menuItem)
 			}
 
 			// Properties
-			contextMenu.addMenuItem(newSeperator());
-			var menuItem = newMenuItem();
-			menuItem.text = i18n("Properties");
+			contextMenu.addMenuItem(newSeperator())
+			var menuItem = newMenuItem()
+			menuItem.text = i18n("Properties")
 			menuItem.clicked.connect(function() {
 				mixerItem.showPropertiesDialog()
 				main.closeDialog(false)
-			});
+			})
 		}
 	}
 
@@ -788,15 +783,15 @@ PlasmaComponents.ListItem {
 		acceptedButtons: Qt.RightButton
 		anchors.fill: parent
 
-		onClicked: contextMenu.show(mouse.x, mouse.y);
+		onClicked: contextMenu.show(mouse.x, mouse.y)
 	}
 
 	function showPropertiesDialog() {
 		var qml = 'import QtQuick 2.0; \
 		PulseObjectDialog { \
 			pulseObject: PulseObject \
-		} ';
-		var dialog = Qt.createQmlObject(qml, mixerItem);
-		dialog.visible = true;
+		} '
+		var dialog = Qt.createQmlObject(qml, mixerItem)
+		dialog.visible = true
 	}
 }
