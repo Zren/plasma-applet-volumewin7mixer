@@ -1,3 +1,11 @@
+## v24 - January 28 2019
+
+* Add @RValeye's french translations (Issue #8).
+* Add @Vistaus dutch translations (Pull Request #9).
+* Round up the volume percentage increment to avoid 50 => 59% instead of 60% when you have 10 steps.
+* Scale properties dialog sizes by dpi + fix the headings when scrolling.
+* Code cleanup.
+
 ## v23 - June 5 2018
 
 * Add "Profile" submenu for devices to quickly switch HDMI => Speakers for certain laptops, or from Stereo to Surround. Creating a submenu required a workaround to avoid a SegFault (plasmashell crash). While the workaround does work, please report if plasmashell crashes when opening a device's context menu.
