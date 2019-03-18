@@ -655,6 +655,30 @@ PlasmaComponents.ListItem {
 							}
 						}
 
+						// Block wheel events
+						KAddons.MouseEventListener {
+							anchors.fill: parent
+							acceptedButtons: Qt.MidButton
+
+							property int wheelDelta: 0
+							onWheelMoved: {
+								wheelDelta += wheel.delta
+							
+								// Magic number 120 for common "one click"
+								// See: http://qt-project.org/doc/qt-5/qml-qtquick-wheelevent.html#angleDelta-prop
+								while (wheelDelta >= 120) {
+									wheelDelta -= 120
+									PulseObjectCommands.increaseChannelVolume(PulseObject, index)
+									channelSlider.playFeedback()
+								}
+								while (wheelDelta <= -120) {
+									wheelDelta += 120
+									PulseObjectCommands.decreaseChannelVolume(PulseObject, index)
+									channelSlider.playFeedback()
+								}
+							}
+						}
+
 						Component.onCompleted: {
 							channelSlider.ready = true
 							// mixerItem.isVolumeBoosted = volume > 66000 // 100% is 65863.68, not 65536... Bleh. Just trigger at a round number.
