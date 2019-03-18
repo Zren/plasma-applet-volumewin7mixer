@@ -121,7 +121,7 @@ Window {
 		addPulseObjectEntry('hasVolume', 'VolumeObject')
 		addPulseObjectEntry('volumeWriteable', 'VolumeObject')
 		addPulseObjectEntry('channels', 'VolumeObject')
-		addPulseObjectEntry('channelVolumes', 'VolumeObject') // QVariant(QList<qlonglong>) <= How do I expose the QList (and it's contents)?
+		addPulseObjectEntry('channelVolumes', 'VolumeObject')
 		addPulseObjectEntry('rawChannels', 'VolumeObject')
 
 		// if (typeof pulseObject.channelVolumes !== 'undefined') {
