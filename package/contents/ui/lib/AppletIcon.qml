@@ -1,4 +1,4 @@
-// Version: 2
+// Version: 3
 
 import QtQuick 2.0
 import org.kde.plasma.core 2.0 as PlasmaCore
@@ -11,13 +11,19 @@ Item {
 	readonly property string filename: source ? plasmoid.file("", "icons/" + source + '.svg') : ""
 	readonly property int minSize: Math.min(width, height)
 	property bool smooth: true
+	property var overlays: []
+	property var colorGroup: PlasmaCore.ColorScope.colorGroup
+
 
 	PlasmaCore.IconItem {
+		id: iconItem
 		anchors.fill: parent
 		visible: !appletIcon.usingPackageSvg
 		source: appletIcon.usingPackageSvg ? '' : appletIcon.source
 		active: appletIcon.active
 		smooth: appletIcon.smooth
+		overlays: appletIcon.overlays
+		colorGroup: appletIcon.colorGroup
 	}
 
 	PlasmaCore.SvgItem {
@@ -35,6 +41,14 @@ Item {
 		svg: PlasmaCore.Svg {
 			id: svg
 			imagePath: appletIcon.filename
+		}
+
+		PlasmaCore.IconItem {
+			id: emblemItem
+			anchors.fill: parent
+			visible: parent.visible
+			overlays: appletIcon.overlays
+			colorGroup: appletIcon.colorGroup
 		}
 	}
 }
