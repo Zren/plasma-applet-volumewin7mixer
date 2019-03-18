@@ -620,6 +620,10 @@ PlasmaComponents.ListItem {
 							}
 						}
 
+						function playFeedback() {
+							mixerItem.playFeedback()
+						}
+
 						property bool playFeedbackOnUpdate: false
 						onPressedChanged: {
 							if (pressed) {
@@ -641,8 +645,8 @@ PlasmaComponents.ListItem {
 								channelSlider.value = channelSlider.volume
 
 								// Done dragging, play feedback
-								if (mixerItemType == 'Sink' && channelSlider.playFeedbackOnUpdate) {
-									main.playFeedback(PulseObject.index)
+								if (channelSlider.playFeedbackOnUpdate) {
+									channelSlider.playFeedback()
 								}
 
 								if (!channelSlider.pressed) {
