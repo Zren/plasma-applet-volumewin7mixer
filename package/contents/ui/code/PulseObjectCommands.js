@@ -28,15 +28,20 @@ function setVolume(pulseObject, volume) {
 	return volume
 }
 
+function calcVolume(min, current, max, step) {
+	step = Math.ceil(step)
+	var volume = bound(current + step, min, max)
+	if (max - volume < step) {
+		volume = max
+	} else if (volume < step) {
+		volume = min
+	}
+	return volume
+}
+
 function addVolume(pulseObject, step) {
 	// console.log('addVolume', pulseObject, step)
-	step = Math.ceil(step)
-	var volume = bound(pulseObject.volume + step, 0, maximumValue)
-	if (maximumValue - volume < step) {
-		volume = maximumValue
-	} else if (volume < step) {
-		volume = 0
-	}
+	var volume = calcVolume(0, pulseObject.volume, maximumValue, step)
 	return setVolume(pulseObject, volume)
 }
 
@@ -53,6 +58,23 @@ function decreaseVolume(pulseObject) {
 	var totalSteps = plasmoid.configuration.volumeUpDownSteps
 	var step = maximumValue / totalSteps
 	return addVolume(pulseObject, -step)
+}
+
+function addChannelVolume(pulseObject, channelIndex, step) {
+	var volume = calcVolume(0, pulseObject.channelVolumes[channelIndex], maximumValue, step)
+	return pulseObject.setChannelVolume(channelIndex, volume)
+}
+
+function increaseChannelVolume(pulseObject, channelIndex) {
+	var totalSteps = plasmoid.configuration.volumeUpDownSteps
+	var step = maximumValue / totalSteps
+	return addChannelVolume(pulseObject, channelIndex, step)
+}
+
+function decreaseChannelVolume(pulseObject, channelIndex) {
+	var totalSteps = plasmoid.configuration.volumeUpDownSteps
+	var step = maximumValue / totalSteps
+	return addChannelVolume(pulseObject, channelIndex, -step)
 }
 
 
