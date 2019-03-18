@@ -148,7 +148,7 @@ PlasmaComponents.ListItem {
 			if (PulseObject.name.indexOf('bluez_sink.') === 0) {
 				return 'preferences-system-bluetooth'
 			}
-			return 'speaker'
+			return 'kmix' // looks like a speaker
 		} else if (mixerItemType == 'Source') {
 			// Microphone
 			return 'mic-on'
