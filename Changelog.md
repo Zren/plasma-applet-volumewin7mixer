@@ -30,7 +30,7 @@
 * Show checkmark next to the default speaker/mic when 2+ devices.
 * Hide virtual streams by default (configurable).
 * Scale panel icon to the same maximum size as the other icons in Plasma 5.10.
-* Begin packaging translations in the *.plasmoid (requires KDE Frameworks v37 to work). Reused some translations from the default volume and mediacontroller widgets.
+* Begin packaging translations in the `*.plasmoid` (requires KDE Frameworks v37 to work). Reused some translations from the default volume and mediacontroller widgets.
 
 ## v19 - March 29 2017
 
