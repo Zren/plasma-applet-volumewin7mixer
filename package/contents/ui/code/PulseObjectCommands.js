@@ -31,9 +31,9 @@ function setVolume(pulseObject, volume) {
 function calcVolume(min, current, max, step) {
 	step = Math.ceil(step)
 	var volume = bound(current + step, min, max)
-	if (max - volume < step) {
+	if (max - volume < step * 0.5) {
 		volume = max
-	} else if (volume < step) {
+	} else if (volume < step * 0.5) {
 		volume = min
 	}
 	return volume
