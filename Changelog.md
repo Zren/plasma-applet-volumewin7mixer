@@ -1,3 +1,11 @@
+## v24 - June __ 2020
+
+* Only jump to 0%/100% if there's less than `step/2` remaining (Issue #17)
+* Use `kmix` icon instead of the `speaker` icon for "speaker" pulseaudio sinks. It looks more like a speaker.
+* Increment using config step percentage when scrolling the sliders themselves.
+* Show Plasma 5.14's VolumeObject.rawChannels in the PulseObject's properties popup.
+* Use aec_method="webrtc" argument with echocancel.
+
 ## v24 - January 28 2019
 
 * Add @RValeye's french translations (Issue #8).
