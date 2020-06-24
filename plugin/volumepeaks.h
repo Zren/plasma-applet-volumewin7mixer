@@ -13,7 +13,7 @@ class VolumePeaks : public QObject {
 	Q_PROPERTY(QStringList peakCommandArgs READ peakCommandArgs WRITE setPeakCommandArgs NOTIFY peakCommandArgsChanged)
 
 public:
-	explicit VolumePeaks(QObject *parent = 0);
+	explicit VolumePeaks(QObject *parent = nullptr);
 	~VolumePeaks();
 
 	bool peaking() const;

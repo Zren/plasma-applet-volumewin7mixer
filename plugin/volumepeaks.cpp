@@ -2,7 +2,7 @@
 
 VolumePeaks::VolumePeaks(QObject *parent)
 : QObject(parent)
-, m_process(0)
+, m_process(nullptr)
 , m_peaking(false)
 , m_defaultSinkPeak(0)
 , m_peakCommand("")
@@ -27,7 +27,6 @@ void VolumePeaks::setPeaking(bool b) {
 		} else {
 			stop();
 		}
-		
 	}
 }
 
@@ -94,7 +93,7 @@ void VolumePeaks::run() {
 void VolumePeaks::stop() {
 	if (m_process) {
 		m_process->close();
-		disconnect(m_process, 0, this, 0);
+		disconnect(m_process, nullptr, this, nullptr);
 		delete m_process;
 	}
 }
