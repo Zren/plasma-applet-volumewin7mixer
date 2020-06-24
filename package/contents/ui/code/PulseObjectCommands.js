@@ -199,6 +199,9 @@ function enableModuleEchoCancel(sourceId) {
 	command += ' source_master=' + sourceId
 	command += ' source_properties="echo_cancel.source=' + sourceId + '"'
 	command += ' sink_properties="echo_cancel.source=' + sourceId + '"'
+	// command += ' adjust_threshold="0"'
+	command += ' aec_method="webrtc"'
+	// command += ' aec_args="drift_compensation=0"'
 
 	// command += " source_properties=echo_cancel.source=\\'" + sourceId + "\\'application.id=\\'org.PulseAudio.pavucontrol\\'"
 	// command += " sink_properties=echo_cancel.source=\\'" + sourceId + "\\'application.id=\\'org.PulseAudio.pavucontrol\\'"
