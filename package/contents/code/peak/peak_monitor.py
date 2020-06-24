@@ -123,6 +123,11 @@ class PeakMonitor(object):
 
 if __name__ == '__main__':
 	import sys
+	if len(sys.argv) < 3:
+		print('Usage: python3 peak_monitor.py [Sink|SinkInput|Source|SourceOutput] [index]')
+		print('Eg: python3 peak_monitor.py Sink 0')
+		sys.exit(1)
+
 	stream_type = sys.argv[1].lower()
 	device_index = int(sys.argv[2])
 	stream_index = int(sys.argv[3]) if len(sys.argv) >= 4 else -1
