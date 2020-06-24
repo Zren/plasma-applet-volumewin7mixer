@@ -1,4 +1,4 @@
-# Translation of volumewin7mixer in nl_NL
+# Translation of volumewin7mixer in nl
 # Copyright (C) 2019
 # This file is distributed under the same license as the volumewin7mixer package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
@@ -11,7 +11,7 @@ msgstr ""
 "PO-Revision-Date: 2019-01-25 14:39+0100\n"
 "Last-Translator: Heimen Stoffels <vistausss@outlook.com>\n"
 "Language-Team: Dutch <vistausss@outlook.com\n"
-"Language: nl_NL\n"
+"Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
