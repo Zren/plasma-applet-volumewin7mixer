@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: volumewin7mixer\n"
 "Report-Msgid-Bugs-To: https://github.com/Zren/plasma-applet-volumewin7mixer\n"
-"POT-Creation-Date: 2019-01-28 17:07-0500\n"
+"POT-Creation-Date: 2020-06-23 20:51-0400\n"
 "PO-Revision-Date: 2019-01-25 14:39+0100\n"
 "Last-Translator: Heimen Stoffels <vistausss@outlook.com>\n"
 "Language-Team: Dutch <vistausss@outlook.com\n"
@@ -18,239 +18,243 @@ msgstr ""
 "X-Generator: Poedit 2.1.1\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../contents/ui/config/ConfigApplet.qml:31
+#: ../contents/ui/config/ConfigApplet.qml
 msgid "Media Keys"
 msgstr "Mediatoetsen"
 
-#: ../contents/ui/config/ConfigApplet.qml:37
+#: ../contents/ui/config/ConfigApplet.qml
 msgid "Volume Up/Down Steps:"
 msgstr "Aantal stappen volume omhoog/omlaag:"
 
-#: ../contents/ui/config/ConfigApplet.qml:45
+#: ../contents/ui/config/ConfigApplet.qml
 msgid "One step = %1%"
 msgstr "Eén stap = %1%"
 
-#: ../contents/ui/config/ConfigApplet.qml:54
+#: ../contents/ui/config/ConfigApplet.qml
 msgid "Mixer"
 msgstr "Mixer"
 
-#: ../contents/ui/config/ConfigApplet.qml:62
+#: ../contents/ui/config/ConfigApplet.qml
 msgid "Show Ticks every 10%"
 msgstr "Elke 10% aanslagen tonen"
 
-#: ../contents/ui/config/ConfigApplet.qml:67
+#: ../contents/ui/config/ConfigApplet.qml
 msgid "Volume Boost"
 msgstr "Volumeboost"
 
-#: ../contents/ui/config/ConfigApplet.qml:88
+#: ../contents/ui/config/ConfigApplet.qml
 msgid "Volume Slider Theme"
 msgstr "Thema van volumeschuifregelaars"
 
-#: ../contents/ui/config/ConfigApplet.qml:92
+#: ../contents/ui/config/ConfigApplet.qml
 msgid "Desktop Theme (%1)"
 msgstr "Bureaubladthema (%1)"
 
-#: ../contents/ui/config/ConfigApplet.qml:99
+#: ../contents/ui/config/ConfigApplet.qml
 msgid "Color Theme (Default Look)"
 msgstr "Thema met kleur (standaard)"
 
-#: ../contents/ui/config/ConfigApplet.qml:108
+#: ../contents/ui/config/ConfigApplet.qml
 msgid "Light Blue on Grey (Default Look)"
 msgstr "Lichtblauw op grijs (standaard)"
 
-#: ../contents/ui/config/ConfigApplet.qml:145
+#: ../contents/ui/config/ConfigApplet.qml
 msgid "Options"
 msgstr "Opties"
 
-#: ../contents/ui/config/ConfigApplet.qml:151
-msgid "Move all Apps to device when setting default device (when set in with the context menu)"
-msgstr "Alle apps overschakelen naar apparaat bij instellen van standaardapparaat (indien ingesteld via het rechtermuisknopmenu)"
+#: ../contents/ui/config/ConfigApplet.qml
+msgid ""
+"Move all Apps to device when setting default device (when set in with the "
+"context menu)"
+msgstr ""
+"Alle apps overschakelen naar apparaat bij instellen van standaardapparaat "
+"(indien ingesteld via het rechtermuisknopmenu)"
 
-#: ../contents/ui/config/ConfigApplet.qml:156
+#: ../contents/ui/config/ConfigApplet.qml
 msgid "Close the popup after setting a default device"
 msgstr "Pop-up sluiten na instellen van standaardapparaat"
 
-#: ../contents/ui/config/ConfigApplet.qml:161
+#: ../contents/ui/config/ConfigApplet.qml
 msgid "Show OSD on when changing the volume."
 msgstr "Melding tonen bij het volume-aanpassingen"
 
-#: ../contents/ui/config/ConfigApplet.qml:166
+#: ../contents/ui/config/ConfigApplet.qml
 msgid "Volume Feedback: Play popping noise when changing the volume."
 msgstr "Volumeterugkoppeling: plofgeluid afspelen tijdens volume-aanpassingen"
 
-#: ../contents/ui/config/ConfigApplet.qml:172
+#: ../contents/ui/config/ConfigApplet.qml
 msgid "Visual Feedback: Visualize current sound."
 msgstr "Visuele terugkoppeling: huidig geluid visualiseren"
 
-#: ../contents/ui/config/ConfigApplet.qml:184
+#: ../contents/ui/config/ConfigApplet.qml
 msgid "Show virtual streams."
 msgstr "Virtuele streams tonen"
 
-#: ../contents/ui/config/ConfigApplet.qml:192
+#: ../contents/ui/config/ConfigApplet.qml
 msgid "Media Controller"
 msgstr "Mediabediening"
 
-#: ../contents/ui/config/ConfigApplet.qml:198
+#: ../contents/ui/config/ConfigApplet.qml
 msgid "Show Media Controller"
 msgstr "Mediabediening tonen"
 
-#: ../contents/ui/config/ConfigApplet.qml:204
+#: ../contents/ui/config/ConfigApplet.qml
 msgid "Position"
 msgstr "Positie"
 
-#: ../contents/ui/config/ConfigApplet.qml:206
+#: ../contents/ui/config/ConfigApplet.qml
 msgid "Top"
 msgstr "Bovenaan"
 
-#: ../contents/ui/config/ConfigApplet.qml:207
+#: ../contents/ui/config/ConfigApplet.qml
 msgid "Bottom"
 msgstr "Onderaan"
 
-#: ../contents/ui/config/ConfigApplet.qml:213
+#: ../contents/ui/config/ConfigApplet.qml
 msgid "Show Time Elapsed"
 msgstr "Verstreken tijd tonen"
 
-#: ../contents/ui/config/ConfigApplet.qml:218
+#: ../contents/ui/config/ConfigApplet.qml
 msgid "Show Time Left"
 msgstr "Resterende tijd tonen"
 
-#: ../contents/ui/config/ConfigApplet.qml:223
+#: ../contents/ui/config/ConfigApplet.qml
 msgid "Show Total Duration"
 msgstr "Totale duur tonen"
 
-#: ../contents/ui/config/ConfigApplet.qml:231
+#: ../contents/ui/config/ConfigApplet.qml
 msgid "Keyboard Shortcuts"
 msgstr "Sneltoetsen"
 
-#: ../contents/ui/config/ConfigApplet.qml:238
+#: ../contents/ui/config/ConfigApplet.qml
 msgid "Set the Global Shortcut in the Keyboard Shortcuts tab."
 msgstr "Stel de globale sneltoets in op het tabblad 'Sneltoetsen'."
 
-#: ../contents/ui/config/ConfigApplet.qml:247
+#: ../contents/ui/config/ConfigApplet.qml
 msgid "Global Shortcut"
 msgstr "Globale sneltoets"
 
-#: ../contents/ui/config/ConfigApplet.qml:251
+#: ../contents/ui/config/ConfigApplet.qml
 msgid "Selection: Select Previous Stream"
 msgstr "Selectie: vorige stream selecteren"
 
-#: ../contents/ui/config/ConfigApplet.qml:255
+#: ../contents/ui/config/ConfigApplet.qml
 msgid "Selection: Select Next Stream"
 msgstr "Selectie: volgende stream selecteren"
 
-#: ../contents/ui/config/ConfigApplet.qml:259
+#: ../contents/ui/config/ConfigApplet.qml
 msgid "Selection: Increase Volume"
 msgstr "Selectie: volume verhogen"
 
-#: ../contents/ui/config/ConfigApplet.qml:263
+#: ../contents/ui/config/ConfigApplet.qml
 msgid "Selection: Decrease Volume"
 msgstr "Selectie: volume verlagen"
 
-#: ../contents/ui/config/ConfigApplet.qml:267
+#: ../contents/ui/config/ConfigApplet.qml
 msgid "Selection: Make Default Device"
 msgstr "Selectie: instellen als standaardapparaat"
 
-#: ../contents/ui/config/ConfigApplet.qml:271
+#: ../contents/ui/config/ConfigApplet.qml
 msgid "Selection: Toggle Mute"
 msgstr "Selectie: dempen/ontdempen"
 
-#: ../contents/ui/config/ConfigApplet.qml:275
+#: ../contents/ui/config/ConfigApplet.qml
 msgid "Selection: Open Context Menu"
 msgstr "Selectie: rechtermuisknopmenu openen"
 
-#: ../contents/ui/config/ConfigApplet.qml:283
+#: ../contents/ui/config/ConfigApplet.qml
 msgid "Selection: Set Volume to %1%"
 msgstr "Selectie: volume instellen op %1%"
 
-#: ../contents/ui/lib/AppletVersion.qml:41
+#: ../contents/ui/lib/AppletVersion.qml
 msgid "<b>Version:</b> %1"
 msgstr "<b>Versie:</b> %1"
 
-#: ../contents/ui/main.qml:144
+#: ../contents/ui/main.qml
 msgid "Recording Apps"
 msgstr "Opname-applicaties"
 
-#: ../contents/ui/main.qml:153
+#: ../contents/ui/main.qml
 msgid "Apps"
 msgstr "Apps"
 
-#: ../contents/ui/main.qml:162
+#: ../contents/ui/main.qml
 msgid "Mics"
 msgstr "Microfoons"
 
-#: ../contents/ui/main.qml:171
+#: ../contents/ui/main.qml
 msgid "Speakers"
 msgstr "Luidsprekers"
 
-#: ../contents/ui/main.qml:484
+#: ../contents/ui/main.qml
 msgid "PulseAudio Control"
 msgstr "PulseAudio-bediening"
 
-#: ../contents/ui/main.qml:485
+#: ../contents/ui/main.qml
 msgid "AlsaMixer"
 msgstr "AlsaMixer"
 
-#: ../contents/ui/MediaController.qml:271
+#: ../contents/ui/MediaController.qml
 msgctxt "Remaining time for song e.g -5:42"
 msgid "-%1"
 msgstr "-%1"
 
-#: ../contents/ui/MixerItem.qml:169
+#: ../contents/ui/MixerItem.qml
 msgid "%1 (Echo Cancelled)"
 msgstr "%1 (echo onderdrukt)"
 
-#: ../contents/ui/MixerItem.qml:182
+#: ../contents/ui/MixerItem.qml
 msgid "Mic"
 msgstr "Microfoon"
 
-#: ../contents/ui/MixerItem.qml:186
+#: ../contents/ui/MixerItem.qml
 msgid "Speaker"
 msgstr "Luidspreker"
 
-#: ../contents/ui/MixerItem.qml:188
+#: ../contents/ui/MixerItem.qml
 msgid "HDMI"
 msgstr "HDMI"
 
-#: ../contents/ui/MixerItem.qml:238
+#: ../contents/ui/MixerItem.qml
 msgid "Name"
 msgstr "Naam"
 
-#: ../contents/ui/MixerItem.qml:239
+#: ../contents/ui/MixerItem.qml
 msgid "Description"
 msgstr "Omschrijving"
 
-#: ../contents/ui/MixerItem.qml:240
+#: ../contents/ui/MixerItem.qml
 msgid "Volume"
 msgstr "Volume"
 
-#: ../contents/ui/MixerItem.qml:242
+#: ../contents/ui/MixerItem.qml
 msgid "Port"
 msgstr "Poort"
 
-#: ../contents/ui/MixerItem.qml:246
+#: ../contents/ui/MixerItem.qml
 msgid "Device"
 msgstr "Apparaat"
 
-#: ../contents/ui/MixerItem.qml:666
+#: ../contents/ui/MixerItem.qml
 msgid "Volume Boost (150% Volume)"
 msgstr "Volumeboost (150% volume)"
 
-#: ../contents/ui/MixerItem.qml:689
+#: ../contents/ui/MixerItem.qml
 msgid "Show Channels"
 msgstr "Kanalen tonen"
 
-#: ../contents/ui/MixerItem.qml:723
+#: ../contents/ui/MixerItem.qml
 msgid "Profile"
 msgstr "Profiel"
 
-#: ../contents/ui/MixerItem.qml:750
+#: ../contents/ui/MixerItem.qml
 msgid "Echo Cancellation"
 msgstr "Echo-onderdrukking"
 
-#: ../contents/ui/MixerItem.qml:761
+#: ../contents/ui/MixerItem.qml
 msgid "Listen to Device"
 msgstr "Luisteren naar apparaat"
 
-#: ../contents/ui/MixerItem.qml:774
+#: ../contents/ui/MixerItem.qml
 msgid "Properties"
 msgstr "Eigenschappen"
