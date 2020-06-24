@@ -11,6 +11,7 @@ class VolumePeaks : public QObject {
     Q_PROPERTY(bool peaking READ peaking WRITE setPeaking NOTIFY peakingChanged)
     Q_PROPERTY(int defaultSinkPeak READ defaultSinkPeak WRITE setDefaultSinkPeak NOTIFY defaultSinkPeakChanged)
     Q_PROPERTY(QString peakCommand READ peakCommand WRITE setPeakCommand NOTIFY peakCommandChanged)
+    Q_PROPERTY(QStringList peakCommandArgs READ peakCommandArgs WRITE setPeakCommandArgs NOTIFY peakCommandArgsChanged)
 
 public:
     explicit VolumePeaks(QObject *parent = 0);
@@ -25,10 +26,14 @@ public:
     QString peakCommand() const;
     void setPeakCommand(const QString &command);
 
+    QStringList peakCommandArgs() const;
+    void setPeakCommandArgs(const QStringList &args);
+
 Q_SIGNALS:
     void peakingChanged() const;
     void defaultSinkPeakChanged() const;
     void peakCommandChanged() const;
+    void peakCommandArgsChanged() const;
 
 public slots:
     void readyReadStandardOutput();
@@ -43,6 +48,7 @@ private:
     bool m_peaking;
     int m_defaultSinkPeak;
     QString m_peakCommand;
+    QStringList m_peakCommandArgs;
 };
 
 #endif

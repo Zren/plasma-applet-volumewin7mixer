@@ -5,6 +5,7 @@ m_process(0),
 m_peaking(false),
 m_defaultSinkPeak(0),
 m_peakCommand("")
+, m_peakCommandArgs()
 {
 
 }
@@ -50,6 +51,17 @@ void VolumePeaks::setPeakCommand(const QString &command) {
     }
 }
 
+QStringList VolumePeaks::peakCommandArgs() const {
+    return m_peakCommandArgs;
+}
+void VolumePeaks::setPeakCommandArgs(const QStringList &args) {
+    if (args != m_peakCommandArgs) {
+        m_peakCommandArgs = args;
+        emit peakCommandArgsChanged();
+        restart();
+    }
+}
+
 void VolumePeaks::readyReadStandardOutput() {
     QByteArray data = m_process->readAllStandardOutput();
     QList<QByteArray> tokens = data.split('\n');
@@ -74,7 +86,7 @@ void VolumePeaks::run() {
 
     m_process = new QProcess(this);
     connect(m_process, SIGNAL(readyReadStandardOutput()), this, SLOT(readyReadStandardOutput()));
-    m_process->start(m_peakCommand);
+    m_process->start(m_peakCommand, m_peakCommandArgs);
 }
 
 

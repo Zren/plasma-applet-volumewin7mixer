@@ -7,17 +7,14 @@ VolumePeaks {
 	property real defaultSinkPeakRatio: defaultSinkPeak / 65536
 	property int defaultSinkPeakPercent: Math.round(defaultSinkPeakRatio*100)
 	property string filename: plasmoid.file("", "code/peak/peak_monitor.py")
-	peakCommand: {
-		var command = ''
-
+	peakCommand: "python3"
+	peakCommandArgs: {
 		if (mixerItem.mixerItemType == 'Sink' || mixerItem.mixerItemType == 'Source') {
-			command = "python3 " + filename + " " + mixerItem.mixerItemType + " " + PulseObject.index
+			return [filename, mixerItem.mixerItemType, ''+PulseObject.index]
 		} else if (mixerItem.mixerItemType == 'SinkInput' || mixerItem.mixerItemType == 'SourceOutput') {
-			command = "python3 " + filename + " " + mixerItem.mixerItemType + " " + PulseObject.deviceIndex + " " + PulseObject.index
+			return [filename, mixerItem.mixerItemType, ''+PulseObject.deviceIndex, ''+PulseObject.index]
+		} else {
+			return []
 		}
-
-		// console.log("filename", filename)
-		// console.log("command", command)
-		return command
 	}
 }
