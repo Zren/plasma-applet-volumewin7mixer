@@ -1,4 +1,4 @@
-## v24 - June __ 2020
+## v25 - June 24 2020
 
 * Only jump to 0%/100% if there's less than `step/2` remaining (Issue #17)
 * Use `kmix` icon instead of the `speaker` icon for "speaker" pulseaudio sinks. It looks more like a speaker.
