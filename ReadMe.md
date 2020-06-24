@@ -4,9 +4,9 @@ https://store.kde.org/p/1100894/
 
 A fork of the [default volume plasmoid](https://github.com/KDE/plasma-pa/tree/Plasma/5.5/applet) with a Windows 7 theme (vertical sliders).
 
-* v18+ requires KDE 5.8
-* v11+ requires KDE 5.7
-* v2 Tested on KDE 5.5 and 5.6
+* v18+ requires KDE Plasma 5.8
+* v11+ requires KDE Plasma 5.7
+* v2 Tested on KDE Plasma 5.5 and 5.6
 
 
 ## Screenshot
@@ -14,7 +14,7 @@ A fork of the [default volume plasmoid](https://github.com/KDE/plasma-pa/tree/Pl
 ![](https://i.imgur.com/OeC9Zhc.png)
 
 
-## A) Install via KDE
+## A) Install via KDE Plasma
 
 1. Right Click Panel > Panel Options > Add Widgets
 2. Get New Widgets > Download New Widgets
