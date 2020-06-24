@@ -19,18 +19,18 @@ find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS Plasma)
 
 
 set(qml_SRCS
-    qmldir
+	qmldir
 )
 
 set(cpp_SRCS
-    plugin.cpp
-    volumepeaks.cpp
+	plugin.cpp
+	volumepeaks.cpp
 )
 
 add_library(plasma-volumewin7mixer-declarative SHARED ${cpp_SRCS})
 target_link_libraries(plasma-volumewin7mixer-declarative
-    Qt5::Quick
-    KF5::Plasma
+	Qt5::Quick
+	KF5::Plasma
 )
 
 set(PRIVATE_QML_INSTALL_DIR ${QML_INSTALL_DIR}/org/kde/plasma/private/volumewin7mixer)
