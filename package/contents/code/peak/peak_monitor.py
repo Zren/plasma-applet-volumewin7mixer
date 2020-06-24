@@ -1,10 +1,10 @@
-#!/bin/python2
+#!/bin/python3
 
 # See http://freshfoo.com/blog/pulseaudio_monitoring for information on how
 # this module works.
 
 import sys
-from Queue import Queue
+from queue import Queue
 from ctypes import POINTER, c_ubyte, c_void_p, c_ulong, cast, sizeof
 
 # From https://github.com/Valodim/python-pulseaudio
@@ -35,7 +35,7 @@ class PeakMonitor(object):
 		
 		# context = pa_context_new(_mainloop_api, 'peak_demo')
 		proplist = pa_proplist_new()
-		pa_proplist_sets(proplist, PA_PROP_APPLICATION_ID, "org.PulseAudio.pavucontrol")
+		pa_proplist_sets(proplist, PA_PROP_APPLICATION_ID, b"org.PulseAudio.pavucontrol")
 		context = pa_context_new_with_proplist(_mainloop_api, None, proplist)
 
 		pa_context_set_state_callback(context, self._context_notify_cb, None)
@@ -54,10 +54,10 @@ class PeakMonitor(object):
 			self.register_peak_monitor(context)
 
 		elif state == PA_CONTEXT_FAILED :
-			print "Connection failed"
+			print("Connection failed")
 
 		elif state == PA_CONTEXT_TERMINATED:
-			print "Connection terminated"
+			print("Connection terminated")
 
 	def register_peak_monitor(self, context):
 		# Tell PA to call stream_read_cb with peak samples.
@@ -67,7 +67,7 @@ class PeakMonitor(object):
 		samplespec.format = PA_SAMPLE_U8
 		samplespec.rate = self.rate
 
-		pa_stream = pa_stream_new(context, "Peak detect (plasma-pa-feedback)", samplespec, None)
+		pa_stream = pa_stream_new(context, b"Peak detect (plasma-pa-feedback)", samplespec, None)
 		if not pa_stream:
 			print("Failed to create monitoring stream")
 			return
@@ -80,7 +80,7 @@ class PeakMonitor(object):
 			pa_stream_set_monitor_stream(pa_stream, self.stream_index)
 
 		flags = PA_STREAM_DONT_MOVE | PA_STREAM_PEAK_DETECT | PA_STREAM_ADJUST_LATENCY
-		dev = STRING(str(self.device_index))
+		dev = STRING(str(self.device_index).encode('utf8'))
 		attr = None
 		result = pa_stream_connect_record(pa_stream, dev, attr, flags)
 		if result < 0:
@@ -107,7 +107,7 @@ class PeakMonitor(object):
 		assert(length % sizeof(c_ubyte) == 0)
 
 		data = cast(data, POINTER(c_ubyte))
-		for i in xrange(length):
+		for i in range(length):
 			# When PA_SAMPLE_U8 is used, samples values range from 128
 			# to 255 because the underlying audio data is signed but
 			# it doesn't make sense to return signed peaks.

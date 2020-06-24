@@ -11,9 +11,9 @@ VolumePeaks {
 		var command = ''
 
 		if (mixerItem.mixerItemType == 'Sink' || mixerItem.mixerItemType == 'Source') {
-			command = "python2 " + filename + " " + mixerItem.mixerItemType + " " + PulseObject.index
+			command = "python3 " + filename + " " + mixerItem.mixerItemType + " " + PulseObject.index
 		} else if (mixerItem.mixerItemType == 'SinkInput' || mixerItem.mixerItemType == 'SourceOutput') {
-			command = "python2 " + filename + " " + mixerItem.mixerItemType + " " + PulseObject.deviceIndex + " " + PulseObject.index
+			command = "python3 " + filename + " " + mixerItem.mixerItemType + " " + PulseObject.deviceIndex + " " + PulseObject.index
 		}
 
 		// console.log("filename", filename)
