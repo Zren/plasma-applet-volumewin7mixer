@@ -249,20 +249,13 @@ DialogApplet {
 		]
 	}
 
-
-	function showOsd(volume) {
-		if (plasmoid.configuration.showOsd) {
-			osd.show(PulseObjectCommands.volumePercent(volume))
-		}
-	}
-
 	function increaseDefaultSinkVolume() {
 		if (!sinkModel.defaultSink) {
 			return
 		}
 		sinkModel.defaultSink.muted = false
 		var volume = PulseObjectCommands.increaseVolume(sinkModel.defaultSink)
-		showOsd(volume)
+		osd.showVolume(volume)
 		playFeedback()
 	}
 
@@ -272,7 +265,7 @@ DialogApplet {
 		}
 		sinkModel.defaultSink.muted = false
 		var volume = PulseObjectCommands.decreaseVolume(sinkModel.defaultSink)
-		showOsd(volume)
+		osd.showVolume(volume)
 		playFeedback()
 	}
 
@@ -281,14 +274,8 @@ DialogApplet {
 			return
 		}
 		var toMute = PulseObjectCommands.toggleMute(sinkModel.defaultSink)
-		showOsd(toMute ? 0 : sinkModel.defaultSink.volume)
+		osd.showVolume(toMute ? 0 : sinkModel.defaultSink.volume)
 		playFeedback()
-	}
-
-	function showMicrophoneOsd(volume) {
-		if (plasmoid.configuration.showOsd) {
-			osd.showMicrophone(PulseObjectCommands.volumePercent(volume))
-		}
 	}
 
 	function increaseDefaultSourceVolume() {
@@ -297,7 +284,7 @@ DialogApplet {
 		}
 		sourceModel.defaultSource.muted = false
 		var volume = PulseObjectCommands.increaseVolume(sourceModel.defaultSource)
-		showMicrophoneOsd(volume)
+		osd.showMicVolume(volume)
 	}
 	
 	function decreaseDefaultSourceVolume() {
@@ -306,7 +293,7 @@ DialogApplet {
 		}
 		sourceModel.defaultSource.muted = false
 		var volume = PulseObjectCommands.decreaseVolume(sourceModel.defaultSource)
-		showMicrophoneOsd(volume)
+		osd.showMicVolume(volume)
 	}
 
 	function toggleDefaultSourceMute() {
@@ -314,7 +301,7 @@ DialogApplet {
 			return
 		}
 		var toMute = PulseObjectCommands.toggleMute(sourceModel.defaultSource)
-		showOsd(toMute ? 0 : sourceModel.defaultSource.volume)
+		osd.showMicVolume(toMute ? 0 : sourceModel.defaultSource.volume)
 	}
 
 	// Connections {
@@ -392,6 +379,27 @@ DialogApplet {
 
 	PlasmaVolume.VolumeOSD {
 		id: osd
+
+		function showVolume(volume) {
+			if (plasmoid.configuration.showOsd) {
+				var volPercent = PulseObjectCommands.volumePercent(volume)
+				try {
+					// Plasma 5.19 and below
+					osd.show(volPercent)
+				} catch (e) { // invalid number of arguments
+					// Plasma 5.20
+					var maxPercent = volPercent > 100 ? 150 : 100
+					osd.show(volPercent, maxPercent)
+				}
+			}
+		}
+
+		function showMicVolume(volume) {
+			if (plasmoid.configuration.showOsd) {
+				var volPercent = PulseObjectCommands.volumePercent(volume)
+				osd.showMicrophone(volPercent)
+			}
+		}
 	}
 
 	PlasmaVolume.VolumeFeedback {
