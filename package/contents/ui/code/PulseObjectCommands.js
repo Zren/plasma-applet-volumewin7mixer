@@ -5,7 +5,7 @@ function bound(value, min, max) {
 }
 
 function volumePercent(volume) {
-	return 100 * volume / maximumValue
+	return Math.round(volume / maximumValue * 100.0)
 }
 
 function toggleMute(pulseObject) {
