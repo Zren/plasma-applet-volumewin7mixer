@@ -30,7 +30,7 @@ To update, run the `./update` script. It will run a `git pull` then reinstall th
 
 ## C) Install via Package Manager
 
-Some awesome users seemed to have packaged this applet under plasma5-applets-eventcalendar.
+Some awesome users seemed to have packaged this applet under `plasma5-applets-volumewin7mixer`.
 
 * Arch: https://aur.archlinux.org/packages/plasma5-applets-volumewin7mixer/
 * Chakra: (Out of Date) https://chakralinux.org/ccr/packages.php?ID=7763
