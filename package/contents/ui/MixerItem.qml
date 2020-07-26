@@ -366,9 +366,7 @@ PlasmaComponents.ListItem {
 						width: parent.width
 						iconItemSource: mixerItem.icon
 						iconItemOverlays: {
-							if (mixerItem.showDefaultDeviceIndicator && mixerItem.isDefaultDevice) {
-								return ['emblem-checked']
-							} else if (mixerItem.usingDefaultDevice) {
+							if (mixerItem.usingDefaultDevice) {
 								return []
 							} else {
 								return ['emblem-unlocked']
@@ -378,6 +376,18 @@ PlasmaComponents.ListItem {
 						labelText: mixerItem.label
 
 						onClicked: contextMenu.showBelow(iconLabelButton)
+
+						PlasmaComponents.RadioButton {
+							visible: mixerItem.showDefaultDeviceIndicator
+							anchors.left: parent.left
+							anchors.top: parent.top
+							anchors.margins: units.smallSpacing
+							checked: mixerItem.isDefaultDevice
+							onClicked: {
+								mixerItem.makeDeviceDefault()
+								checked = Qt.binding(function(){ return mixerItem.isDefaultDevice })
+							}
+						}
 					}
 				}
 			}

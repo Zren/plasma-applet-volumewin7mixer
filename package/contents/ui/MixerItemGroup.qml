@@ -120,7 +120,13 @@ GroupBox {
 			mixerItemWidth: mixerItemGroup.mixerItemWidth
 			volumeSliderWidth: mixerItemGroup.volumeSliderWidth
 			mixerItemType: mixerItemGroup.mixerGroupType
-			showDefaultDeviceIndicator: mixerItemGroup.model.count > 1
+			showDefaultDeviceIndicator: {
+				if (mixerItemType == 'Sink' || mixerItemType == 'Source') {
+					return mixerItemGroup.model.count > 1
+				} else {
+					return false
+				}
+			}
 		}
 
 		currentIndex: -1
