@@ -376,7 +376,11 @@ PlasmaComponents.ListItem {
 						iconItemHeight: mixerItem.volumeSliderWidth
 						labelText: mixerItem.label
 
-						onClicked: contextMenu.showBelow(iconLabelButton)
+						onClicked: if (plasmoid.configuration.setDefaultOnClickSpeaker) {
+										mixerItem.makeDeviceDefault()
+									} else {
+										contextMenu.showBelow(iconLabelButton)
+									}
 
 						PlasmaComponents.RadioButton {
 							id: defaultDeviceRadioButton

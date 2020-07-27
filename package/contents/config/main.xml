@@ -24,6 +24,9 @@
 		<entry name="closeOnSetDefault" type="bool">
 			<default>true</default>
 		</entry>
+		<entry name="setDefaultOnClickSpeaker" type="bool">
+			<default>false</default>
+		</entry>
 		<entry name="showMediaController" type="bool">
 			<default>true</default>
 		</entry>

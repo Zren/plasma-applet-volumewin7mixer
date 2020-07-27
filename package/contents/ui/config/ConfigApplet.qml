@@ -17,6 +17,7 @@ ConfigPage {
 	// property alias cfg_showOpenPavucontrol: showOpenPavucontrol.checked
 	property alias cfg_moveAllAppsOnSetDefault: moveAllAppsOnSetDefault.checked
 	property alias cfg_closeOnSetDefault: closeOnSetDefault.checked
+	property alias cfg_setDefaultOnClickSpeaker: setDefaultOnClickSpeaker.checked
 	property alias cfg_showMediaController: showMediaController.checked
 	property alias cfg_showMediaTimeElapsed: showMediaTimeElapsed.checked
 	property alias cfg_showMediaTimeLeft: showMediaTimeLeft.checked
@@ -154,6 +155,11 @@ ConfigPage {
 			CheckBox {
 				id: closeOnSetDefault
 				text: i18n("Close the popup after setting a default device")
+			}
+
+			CheckBox {
+				id: setDefaultOnClickSpeaker
+				text: i18n("Set default device after clicking a speaker icon")
 			}
 
 			CheckBox {
