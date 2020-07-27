@@ -214,7 +214,8 @@ PlasmaComponents.ListItem {
 	property var name
 
 	property bool showDefaultDeviceIndicator: false
-	property bool isDefaultDevice: {
+	readonly property bool isDevice: mixerItemType == 'Sink' || mixerItemType == 'Source'
+	readonly property bool isDefaultDevice: {
 		if (typeof PulseObject.default === 'boolean') {
 			return PulseObject.default
 		} else {
@@ -376,11 +377,13 @@ PlasmaComponents.ListItem {
 						iconItemHeight: mixerItem.volumeSliderWidth
 						labelText: mixerItem.label
 
-						onClicked: if (mixerItemType == 'Sink' && plasmoid.configuration.setDefaultOnClickSpeaker) {
-										mixerItem.makeDeviceDefault()
-									} else {
-										contextMenu.showBelow(iconLabelButton)
-									}
+						onClicked: {
+							if (mixerItem.isDevice && plasmoid.configuration.setDefaultOnClickSpeaker) {
+								mixerItem.makeDeviceDefault()
+							} else {
+								contextMenu.showBelow(iconLabelButton)
+							}
+						}
 
 						PlasmaComponents.RadioButton {
 							id: defaultDeviceRadioButton

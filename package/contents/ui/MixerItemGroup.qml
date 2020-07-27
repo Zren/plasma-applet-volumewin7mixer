@@ -121,7 +121,7 @@ GroupBox {
 			volumeSliderWidth: mixerItemGroup.volumeSliderWidth
 			mixerItemType: mixerItemGroup.mixerGroupType
 			showDefaultDeviceIndicator: {
-				if (mixerItemType == 'Sink' || mixerItemType == 'Source') {
+				if (isDevice) {
 					return mixerItemGroup.model.count > 1
 				} else {
 					return false
