@@ -376,7 +376,7 @@ PlasmaComponents.ListItem {
 						iconItemHeight: mixerItem.volumeSliderWidth
 						labelText: mixerItem.label
 
-						onClicked: if (plasmoid.configuration.setDefaultOnClickSpeaker) {
+						onClicked: if (mixerItemType == 'Sink' && plasmoid.configuration.setDefaultOnClickSpeaker) {
 										mixerItem.makeDeviceDefault()
 									} else {
 										contextMenu.showBelow(iconLabelButton)
