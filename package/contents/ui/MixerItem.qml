@@ -378,7 +378,7 @@ PlasmaComponents.ListItem {
 						labelText: mixerItem.label
 
 						onClicked: {
-							if (mixerItem.isDevice && plasmoid.configuration.setDefaultOnClickSpeaker) {
+							if (mixerItem.isDevice && plasmoid.configuration.setDefaultOnClickIcon) {
 								mixerItem.makeDeviceDefault()
 							} else {
 								contextMenu.showBelow(iconLabelButton)
