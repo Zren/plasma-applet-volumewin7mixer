@@ -534,10 +534,8 @@ PlasmaComponents.ListItem {
 				}
 				
 				onClicked: {
-					onPressed: {
-						// logPulseObj(PulseObject)
-						PulseObject.muted = !PulseObject.muted
-					}
+					// logPulseObj(PulseObject)
+					PulseObject.muted = !PulseObject.muted
 				}
 			}
 		}
