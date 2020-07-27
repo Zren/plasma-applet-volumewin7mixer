@@ -291,7 +291,7 @@ PlasmaComponents.ListItem {
 			if (main.draggedStreamType == 'SinkInput') {
 				main.draggedStream.deviceIndex = PulseObject.index
 			} else if (main.draggedStreamType == 'Source') {
-				PulseObject.draggedStream == main.draggedStream.index
+				PulseObject.deviceIndex = main.draggedStream.index
 			}
 		}
 	}
