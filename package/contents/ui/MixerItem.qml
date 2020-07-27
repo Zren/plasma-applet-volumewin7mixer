@@ -1,6 +1,7 @@
 import QtQuick 2.0
 import QtQuick.Layouts 1.0
 import QtQuick.Controls 1.0
+import QtQuick.Controls 2.0 as QQC2
 
 import org.kde.draganddrop 2.0
 import org.kde.kquickcontrolsaddons 2.0 as KAddons
@@ -378,6 +379,7 @@ PlasmaComponents.ListItem {
 						onClicked: contextMenu.showBelow(iconLabelButton)
 
 						PlasmaComponents.RadioButton {
+							id: defaultDeviceRadioButton
 							visible: mixerItem.showDefaultDeviceIndicator
 							anchors.left: parent.left
 							anchors.top: parent.top
@@ -386,6 +388,18 @@ PlasmaComponents.ListItem {
 							onClicked: {
 								mixerItem.makeDeviceDefault()
 								checked = Qt.binding(function(){ return mixerItem.isDefaultDevice })
+							}
+
+							QQC2.ToolTip {
+								visible: defaultDeviceRadioButton.hovered
+								text: {
+									if (defaultDeviceRadioButton.checked) {
+										return i18n("Is default device")
+									} else {
+										return i18n("Make default device")
+									}
+								}
+								delay: 0
 							}
 						}
 					}
