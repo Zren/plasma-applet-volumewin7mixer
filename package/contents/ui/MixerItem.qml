@@ -792,7 +792,7 @@ PlasmaComponents.ListItem {
 				for (var i = 0; i < PulseObject.ports.length; i++) {
 					var port = PulseObject.ports[i]
 					var menuItem = newMenuItem()
-					if (port.availability == PlasmaVolume.Port.Unavailable) {
+					if (typeof PlasmaVolume.Port !== "undefined" && port.availability == PlasmaVolume.Port.Unavailable) {
 						if (port.name == "analog-output-speaker" || port.name == "analog-input-microphone-internal") {
 							menuItem.text = i18ndc("plasma_applet_org.kde.plasma.volume", "Port is unavailable", "%1 (unavailable)", port.description)
 						} else {
