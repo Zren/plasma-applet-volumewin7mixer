@@ -8,6 +8,8 @@ import org.kde.kquickcontrolsaddons 2.0 as KAddons
 import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.components 2.0 as PlasmaComponents
 
+import org.kde.plasma.private.volume 0.1 as PlasmaVolume
+
 import "lib"
 import "./code/Icon.js" as Icon
 import "./code/PulseObjectCommands.js" as PulseObjectCommands
@@ -80,6 +82,10 @@ PlasmaComponents.ListItem {
 		if (mixerItemType == 'Sink') {
 			main.playFeedback(PulseObject.index)
 		}
+	}
+
+	function setActivePort(portIndex) {
+		PulseObject.activePortIndex = portIndex
 	}
 
 	function getCard() {
@@ -778,19 +784,26 @@ PlasmaComponents.ListItem {
 
 			// Ports
 			if (PulseObject.ports && PulseObject.ports.length > 1) {
-				contextMenu.addMenuItem(newSeperator())
+				var sectionItem = newMenuItem()
+				sectionItem.text = i18ndc("plasma_applet_org.kde.plasma.volume", "Heading for a list of ports of a device (for example built-in laptop speakers or a plug for headphones)", "Ports")
+				sectionItem.section = true
+				contextMenu.addMenuItem(sectionItem)
+
 				for (var i = 0; i < PulseObject.ports.length; i++) {
 					var port = PulseObject.ports[i]
 					var menuItem = newMenuItem()
-					menuItem.text = '[' + i + '] ' + port.description
+					if (port.availability == PlasmaVolume.Port.Unavailable) {
+						if (port.name == "analog-output-speaker" || port.name == "analog-input-microphone-internal") {
+							menuItem.text = i18ndc("plasma_applet_org.kde.plasma.volume", "Port is unavailable", "%1 (unavailable)", port.description)
+						} else {
+							menuItem.text = i18ndc("plasma_applet_org.kde.plasma.volume", "Port is unplugged", "%1 (unplugged)", port.description)
+						}
+					} else {
+						menuItem.text = port.description
+					}
 					menuItem.checkable = true
 					menuItem.checked = i === PulseObject.activePortIndex
-					var setActivePort = function(portIndex){
-						return function() {
-							PulseObject.activePortIndex = portIndex
-						}
-					}
-					menuItem.clicked.connect(setActivePort(i))
+					menuItem.clicked.connect(mixerItem.setActivePort.bind(null, i))
 					contextMenu.addMenuItem(menuItem)
 				}
 			}
