@@ -411,7 +411,7 @@ DialogApplet {
 			return
 		}
 		if (sinkIndex == undefined) {
-			sinkIndex = sinkModel.preferredSink.index
+			sinkIndex = sinkModel.defaultSink.index
 		}
 		feedback.play(sinkIndex)
 	}
