@@ -68,7 +68,7 @@ PlasmaCore.DataSource {
 	// onTrackChanged: {
 	// 	function logObj(obj) {
 	// 		for (var key in obj) {
-	// 			if (typeof obj[key] === 'function') continue;
+	// 			if (typeof obj[key] === 'function') continue
 	// 			console.log(obj, key, obj[key])
 	// 		}
 	// 	}
@@ -88,7 +88,7 @@ PlasmaCore.DataSource {
 	}
 
 	function retrievePosition() {
-		serviceOp(mpris2Source.current, "GetPosition");
+		serviceOp(mpris2Source.current, "GetPosition")
 	}
 
 	function setPosition(value) {
@@ -99,27 +99,27 @@ PlasmaCore.DataSource {
 	}
 
 	function raisePlayer() {
-		serviceOp(mpris2Source.current, "Raise");
+		serviceOp(mpris2Source.current, "Raise")
 	}
 
 	function playPause() {
-		serviceOp(mpris2Source.current, "PlayPause");
+		serviceOp(mpris2Source.current, "PlayPause")
 	}
 
 	function previous() {
-		serviceOp(mpris2Source.current, "Previous");
+		serviceOp(mpris2Source.current, "Previous")
 	}
 
 	function next() {
-		serviceOp(mpris2Source.current, "Next");
+		serviceOp(mpris2Source.current, "Next")
 	}
 
 	function stop() {
-		serviceOp(mpris2Source.current, "Stop");
+		serviceOp(mpris2Source.current, "Stop")
 	}
 
 	function raise() {
-		serviceOp(mpris2Source.current, "Raise");
+		serviceOp(mpris2Source.current, "Raise")
 	}
 
 	function setShuffle(value) {
@@ -151,9 +151,9 @@ PlasmaCore.DataSource {
 	}
 
 	function serviceOp(src, op) {
-		var service = mpris2Source.serviceForSource(src);
-		var operation = service.operationDescription(op);
-		return service.startOperationCall(operation);
+		var service = mpris2Source.serviceForSource(src)
+		var operation = service.operationDescription(op)
+		return service.startOperationCall(operation)
 	}
 
 	property var mainConnection: Connections {
