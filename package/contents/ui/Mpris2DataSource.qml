@@ -24,8 +24,8 @@ PlasmaCore.DataSource {
 	property string playbackState: hasPlayer && mpris2Source.data[mpris2Source.current].PlaybackStatus
 	property bool isPlaying: playbackState == "Playing"
 	property bool isPaused: playbackState == "Paused"
-	property bool isShuffling: canControl && mpris2Source.data[mpris2Source.current].Shuffle
-	property string loopState: canControl && mpris2Source.data[mpris2Source.current].LoopStatus
+	property bool isShuffling: canControl && mpris2Source.data[mpris2Source.current].Shuffle || false
+	property string loopState: canControl && mpris2Source.data[mpris2Source.current].LoopStatus || "None"
 	property bool isNotLooping: loopState == "None"
 	property bool isLoopingTrack: loopState == "Track"
 	property bool isLoopingPlaylist: loopState == "Playlist"
@@ -76,7 +76,7 @@ PlasmaCore.DataSource {
 	// }
 
 	property double length: currentMetadata ? currentMetadata["mpris:length"] || 0 : 0
-	property double position: hasPlayer ? mpris2Source.data[mpris2Source.current].Position : 0
+	property double position: hasPlayer ? mpris2Source.data[mpris2Source.current].Position || 0 : 0
 
 	function logState() {
 		console.log(JSON.stringify(mpris2Source.data, null, "\t"))
