@@ -6,16 +6,24 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: volumewin7mixer \n"
+"Project-Id-Version: volumewin7mixer\n"
 "Report-Msgid-Bugs-To: https://github.com/Zren/plasma-applet-volumewin7mixer\n"
-"POT-Creation-Date: 2020-06-23 20:51-0400\n"
+"POT-Creation-Date: 2020-10-23 20:12-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+#: ../metadata.desktop
+msgid "Audio Volume (Win7 Mixer)"
+msgstr ""
+
+#: ../metadata.desktop
+msgid "Adjust the volume of devices and applications"
+msgstr ""
 
 #: ../contents/ui/config/ConfigApplet.qml
 msgid "Media Keys"
@@ -67,6 +75,10 @@ msgstr ""
 
 #: ../contents/ui/config/ConfigApplet.qml
 msgid "Close the popup after setting a default device"
+msgstr ""
+
+#: ../contents/ui/config/ConfigApplet.qml
+msgid "Set default device after clicking a speaker/mic icon"
 msgstr ""
 
 #: ../contents/ui/config/ConfigApplet.qml
@@ -228,6 +240,14 @@ msgstr ""
 
 #: ../contents/ui/MixerItem.qml
 msgid "Device"
+msgstr ""
+
+#: ../contents/ui/MixerItem.qml
+msgid "Is default device"
+msgstr ""
+
+#: ../contents/ui/MixerItem.qml
+msgid "Make default device"
 msgstr ""
 
 #: ../contents/ui/MixerItem.qml
