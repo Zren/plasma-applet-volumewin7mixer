@@ -164,4 +164,11 @@ PlasmaCore.DataSource {
 			}
 		}
 	}
+
+	Component.onCompleted: {
+		// Ever since Plasma 5.10, the mediacontroller widget needs to manually bind the
+		// Global Shortcuts. Unfortunately multiple widgets registering will cause a bug.
+		// https://github.com/KDE/plasma-workspace/commit/7bd909fa3a4f70bf4c03c43b025f7ed65c2e5b5c
+		// mpris2Source.serviceForSource("@multiplex").enableGlobalShortcuts()
+	}
 }
