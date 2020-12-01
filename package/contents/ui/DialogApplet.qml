@@ -134,14 +134,14 @@ Item {
 	}
 	function openDialog(usedKeyboard) {
 		plasmoid.expanded = true
-		delayedUnexpandTimer.start()
-		dialog.visible = true
-		dialogOpened(usedKeyboard)
+		delayedToggleTimer.opening = true
+		delayedToggleTimer.usedKeyboard = usedKeyboard
+		delayedToggleTimer.start()
 	}
 	function closeDialog(usedKeyboard) {
-		dialog.visible = false
-		delayedUnexpandTimer.start()
-		dialogClosed(usedKeyboard)
+		delayedToggleTimer.opening = false
+		delayedToggleTimer.usedKeyboard = usedKeyboard
+		delayedToggleTimer.start()
 	}
 	function toggleDialog(usedKeyboard) {
 		if (dialog.visible) {
@@ -153,13 +153,22 @@ Item {
 
 
 
-	// NOTE: taken from redshift plasmoid (who took in from colorPicker)
+	// NOTE: Taken from redshift plasmoid (which took it from the colorPicker).
 	// This prevents the popup from actually opening, needs to be queued.
 	Timer {
-		id: delayedUnexpandTimer
+		id: delayedToggleTimer
 		interval: 0
+		property bool opening: false
+		property bool usedKeyboard: false
 		onTriggered: {
 			plasmoid.expanded = false
+			if (opening) {
+				dialog.visible = true
+				main.dialogOpened(usedKeyboard)
+			} else {
+				dialog.visible = false
+				main.dialogClosed(usedKeyboard)
+			}
 		}
 	}
 
