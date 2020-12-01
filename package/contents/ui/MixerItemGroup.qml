@@ -117,6 +117,7 @@ GroupBox {
 
 		delegate: MixerItem {
 			// width: mixerItemWidth
+			height: ListView.view.height
 			mixerItemWidth: mixerItemGroup.mixerItemWidth
 			volumeSliderWidth: mixerItemGroup.volumeSliderWidth
 			mixerItemType: mixerItemGroup.mixerGroupType
