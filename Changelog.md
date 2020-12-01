@@ -1,3 +1,13 @@
+## v26 - November 20 2020
+
+* Support Plasma 5.20's osd.show(percent, maxPercent).
+* Fix workaround for opening custom popup when in system tray.
+* Use radio button instead of a checkmark for default device (Issue #19) with a QQC2 ToolTip on hover.
+* Update i18n scripts.
+* Use some of plasma-pa's improvements on port selection.
+* Add support for left clicking device icon to set default device instead of showing the context menu by @linchangyi (Pull Request #20 and #21)
+* Applet name correction in documentation by @luema (Pull Request #18)
+
 ## v25 - June 24 2020
 
 * Only jump to 0%/100% if there's less than `step/2` remaining (Issue #17)
