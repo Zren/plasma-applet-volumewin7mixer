@@ -29,22 +29,33 @@ Item {
 			// 	}
 			// }
 
-			Image {
-				id: albumArt
+			Item {
+				id: albumArtContainer
 				anchors.left: parent.left
 				width: height
 				height: parent.height
-				source: mpris2Source.albumArt
-				asynchronous: true
-				fillMode: Image.PreserveAspectCrop
-				sourceSize: Qt.size(width, height)
-				visible: !!mpris2Source.track && status === Image.Ready
+
+				PlasmaCore.IconItem {
+					id: playerIcon
+					anchors.fill: parent
+					source: mpris2Source.playerIcon
+				}
+
+				Image {
+					id: albumArt
+					anchors.fill: parent
+					source: mpris2Source.albumArt
+					asynchronous: true
+					fillMode: Image.PreserveAspectCrop
+					sourceSize: Qt.size(width, height)
+					visible: !!mpris2Source.track && status === Image.Ready
+				}
 			}
 
 			Column {
 				id: leftSide
 				anchors.fill: parent
-				anchors.leftMargin: albumArt.width + 4
+				anchors.leftMargin: albumArtContainer.width + (4 * PlasmaCore.Units.devicePixelRatio)
 				// anchors.rightMargin: rightSide.width
 
 				// MediaControllerCompact's style

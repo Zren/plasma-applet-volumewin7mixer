@@ -41,6 +41,7 @@ PlasmaCore.DataSource {
 	property bool canSeekMpris: hasPlayer && mpris2Source.data[mpris2Source.current].CanSeek
 	property bool canSeek: canSeekMpris && /*track &&*/ length > 0
 
+	property string playerIcon: hasPlayer && mpris2Source.data[mpris2Source.current]['Desktop Icon Name'] || ''
 
 	property var currentMetadata: mpris2Source.data[mpris2Source.current] ? mpris2Source.data[mpris2Source.current].Metadata : null
 	property string albumArt: currentMetadata ? currentMetadata["mpris:artUrl"] || "" : ""
