@@ -148,6 +148,11 @@ PlasmaComponents.ListItem {
 			}
 		} else if (mixerItemType == 'Sink') {
 			// Speaker
+			if (PulseObject.properties['device.form_factor'] === 'headset') {
+				// While the device.icon_name='audio-headset-usb', the icon
+				// is not in the Breeze icon theme.
+				return 'audio-headphones'
+			}
 			if (PulseObject.activePortIndex != invalidPortIndex) { // not "Invalid Port" (eg: echo-cancel)
 				var portName = PulseObject.ports[PulseObject.activePortIndex].name
 				if (portName.indexOf('headphones') >= 0) { // Eg: analog-output-headphones
@@ -195,7 +200,9 @@ PlasmaComponents.ListItem {
 				return i18n("Mic")
 			}
 		} else if (name.indexOf('alsa_output.') === 0) {
-			if (name.indexOf('.analog-') >= 0) {
+			if (PulseObject.properties['device.form_factor'] === 'headset') {
+				return i18n("Headset")
+			} else if (name.indexOf('.analog-') >= 0) {
 				return i18n("Speaker")
 			} else if (name.indexOf('.hdmi-') >= 0) {
 				return i18n("HDMI")
