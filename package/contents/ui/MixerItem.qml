@@ -178,7 +178,8 @@ PlasmaComponents.ListItem {
 		}
 	}
 
-	function labelFor(name) {
+	property string label: {
+		var name = PulseObject.name
 		if (PulseObject.properties['device.class'] === 'filter') {
 			if (endsWith(name, '.echo-cancel')) { // Same for input and ouput stream
 				// pactl load-module module-echo-cancel
@@ -220,10 +221,6 @@ PlasmaComponents.ListItem {
 
 		return name
 	}
-
-	property string label: labelFor(PulseObject.name)
-
-	property var name
 
 	property bool showDefaultDeviceIndicator: false
 	readonly property bool isDevice: mixerItemType == 'Sink' || mixerItemType == 'Source'

@@ -28,7 +28,6 @@ GroupBox {
 				anchors.right: parent.right
 				text: control.title
 				// width: mixerItemGroup.mixerItemWidth
-				property var name
 				height: Math.max(theme.defaultFont.pixelSize, pinButton.height)
 
 				style: PlasmaStyles.ToolButtonStyle {
