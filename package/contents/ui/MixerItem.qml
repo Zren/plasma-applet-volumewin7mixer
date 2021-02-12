@@ -196,7 +196,7 @@ PlasmaComponents.ListItem {
 			}
 		} else if (name.indexOf('alsa_output.') === 0) {
 			if (name.indexOf('.analog-') >= 0) {
-				return i18n("Speaker")
+				return PulseObject.description
 			} else if (name.indexOf('.hdmi-') >= 0) {
 				return i18n("HDMI")
 			}
