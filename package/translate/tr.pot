@@ -1,0 +1,275 @@
+# Translation of volumewin7mixer in LANGUAGE
+# Copyright (C) 2020
+# This file is distributed under the same license as the volumewin7mixer package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: volumewin7mixer\n"
+"Report-Msgid-Bugs-To: https://github.com/Zren/plasma-applet-volumewin7mixer\n"
+"POT-Creation-Date: 2021-12-10 20:12-0400\n"
+"PO-Revision-Date: 2021-12-10 00:00+0100\n"
+"Last-Translator: Gökay Balcı <gokaybalci@outlook.com>\n"
+"Language-Team: Turkish <LL@li.org>\n"
+"Language: tr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../metadata.desktop
+msgid "Audio Volume (Win7 Mixer)"
+msgstr "Ses Düzeyi (Win7 Mixer)"
+
+#: ../metadata.desktop
+msgid "Adjust the volume of devices and applications"
+msgstr "Cihazların ve uygulamaların ses düzeyini ayarla"
+
+#: ../contents/ui/config/ConfigApplet.qml
+msgid "Media Keys"
+msgstr "Medya Tuşları"
+
+#: ../contents/ui/config/ConfigApplet.qml
+msgid "Volume Up/Down Steps:"
+msgstr "Ses Düzeyi Arttırma/Düşürme Basamakları:"
+
+#: ../contents/ui/config/ConfigApplet.qml
+msgid "One step = %1%"
+msgstr "Bir adım = %1%"
+
+#: ../contents/ui/config/ConfigApplet.qml
+msgid "Mixer"
+msgstr "Karıştırıcı"
+
+#: ../contents/ui/config/ConfigApplet.qml
+msgid "Show Ticks every 10%"
+msgstr "Her %10'da belirtici göster"
+
+#: ../contents/ui/config/ConfigApplet.qml
+msgid "Volume Boost"
+msgstr "Ses Düzeyi Arttırma"
+
+#: ../contents/ui/config/ConfigApplet.qml
+msgid "Volume Slider Theme"
+msgstr "Ses Düzeyi Kaydırıcı Teması"
+
+#: ../contents/ui/config/ConfigApplet.qml
+msgid "Desktop Theme (%1)"
+msgstr "Masaüstü Teması (%1)"
+
+#: ../contents/ui/config/ConfigApplet.qml
+msgid "Color Theme (Default Look)"
+msgstr "Renk Teması (Varsayılan)"
+
+#: ../contents/ui/config/ConfigApplet.qml
+msgid "Light Blue on Grey (Default Look)"
+msgstr "Gri üzerine Açık Mavi (Varsayılan)"
+
+#: ../contents/ui/config/ConfigApplet.qml
+msgid "Options"
+msgstr "Ayarlar"
+
+#: ../contents/ui/config/ConfigApplet.qml
+msgid "Move all Apps to device when setting default device (when set in with the context menu)"
+msgstr "Varsayılan cihaz seçildiğinde tüm uygulamaları o cihaza yönlendir (içerik menüsü ile seçildiğinde)"
+
+#: ../contents/ui/config/ConfigApplet.qml
+msgid "Close the popup after setting a default device"
+msgstr "Varsayılan cihaz seçildikten sonra açılan pencereyi kapat"
+
+#: ../contents/ui/config/ConfigApplet.qml
+msgid "Set default device after clicking a speaker/mic icon"
+msgstr "Hoparlör/mikrofon sembolüne bastıktan sonra varsayılan cihazı belirle"
+
+#: ../contents/ui/config/ConfigApplet.qml
+msgid "Show OSD on when changing the volume."
+msgstr "Ses düzeyi değiştirirken ekranda göstergeyle belirt."
+
+#: ../contents/ui/config/ConfigApplet.qml
+msgid "Volume Feedback: Play popping noise when changing the volume."
+msgstr "Ses Düzeyi Geribildirimi: Ses düzeyini değiştirirken pıtırtı sesi oynat."
+
+#: ../contents/ui/config/ConfigApplet.qml
+msgid "Visual Feedback: Visualize current sound."
+msgstr "Görsel Geribildirim: Güncel ses düzeyini göster."
+
+#: ../contents/ui/config/ConfigApplet.qml
+msgid "Show virtual streams."
+msgstr "Sanal akışları göster."
+
+#: ../contents/ui/config/ConfigApplet.qml
+msgid "Media Controller"
+msgstr "Medya Kontrol Menüsü"
+
+#: ../contents/ui/config/ConfigApplet.qml
+msgid "Show Media Controller"
+msgstr "Medya Kontrol Menüsünü Göster"
+
+#: ../contents/ui/config/ConfigApplet.qml
+msgid "Position"
+msgstr "Pozisyon"
+
+#: ../contents/ui/config/ConfigApplet.qml
+msgid "Top"
+msgstr "Yukarı"
+
+#: ../contents/ui/config/ConfigApplet.qml
+msgid "Bottom"
+msgstr "Aşağı"
+
+#: ../contents/ui/config/ConfigApplet.qml
+msgid "Show Time Elapsed"
+msgstr "Geçen Süreyi Göster"
+
+#: ../contents/ui/config/ConfigApplet.qml
+msgid "Show Time Left"
+msgstr "Kalan Süreyi Göster"
+
+#: ../contents/ui/config/ConfigApplet.qml
+msgid "Show Total Duration"
+msgstr "Toplam Süreyi Göster"
+
+#: ../contents/ui/config/ConfigApplet.qml
+msgid "Keyboard Shortcuts"
+msgstr "Klavye Kısayolları"
+
+#: ../contents/ui/config/ConfigApplet.qml
+msgid "Set the Global Shortcut in the Keyboard Shortcuts tab."
+msgstr "Kapsamlı Kısayolu Klavye Kısayolları sekmesinde ayarla."
+
+#: ../contents/ui/config/ConfigApplet.qml
+msgid "Global Shortcut"
+msgstr "Kapsamlı Kısayol"
+
+#: ../contents/ui/config/ConfigApplet.qml
+msgid "Selection: Select Previous Stream"
+msgstr "Seçim: Bir Önceki Yayını Seç"
+
+#: ../contents/ui/config/ConfigApplet.qml
+msgid "Selection: Select Next Stream"
+msgstr "Seçim: Bir Sonraki Yayını Seç"
+
+#: ../contents/ui/config/ConfigApplet.qml
+msgid "Selection: Increase Volume"
+msgstr "Seçim: Sesi Arttır"
+
+#: ../contents/ui/config/ConfigApplet.qml
+msgid "Selection: Decrease Volume"
+msgstr "Seçim: Sesi Azalt"
+
+#: ../contents/ui/config/ConfigApplet.qml
+msgid "Selection: Make Default Device"
+msgstr "Seçim: Varsayılan Cihaz Yap"
+
+#: ../contents/ui/config/ConfigApplet.qml
+msgid "Selection: Toggle Mute"
+msgstr "Seçim: Sustur"
+
+#: ../contents/ui/config/ConfigApplet.qml
+msgid "Selection: Open Context Menu"
+msgstr "Seçim: İçerik Menüsünü Aç"
+
+#: ../contents/ui/config/ConfigApplet.qml
+msgid "Selection: Set Volume to %1%"
+msgstr "Seçim: Ses Düzeyini %1% Yap"
+
+#: ../contents/ui/lib/AppletVersion.qml
+msgid "<b>Version:</b> %1"
+msgstr "<b>Sürüm:</b> %1"
+
+#: ../contents/ui/main.qml
+msgid "Recording Apps"
+msgstr "Kayıt Uygulamaları"
+
+#: ../contents/ui/main.qml
+msgid "Apps"
+msgstr "Uygulamalar"
+
+#: ../contents/ui/main.qml
+msgid "Mics"
+msgstr "Mikrofonlar"
+
+#: ../contents/ui/main.qml
+msgid "Speakers"
+msgstr "Hoparlörler"
+
+#: ../contents/ui/main.qml
+msgid "PulseAudio Control"
+msgstr "PulseAudio Control"
+
+#: ../contents/ui/main.qml
+msgid "AlsaMixer"
+msgstr "AlsaMixer"
+
+#: ../contents/ui/MediaController.qml
+msgctxt "Remaining time for song e.g -5:42"
+msgid "-%1"
+msgstr "-%1"
+
+#: ../contents/ui/MixerItem.qml
+msgid "%1 (Echo Cancelled)"
+msgstr "%1 (Yankı Kaldırıldı)"
+
+#: ../contents/ui/MixerItem.qml
+msgid "Mic"
+msgstr "Mikrofon"
+
+#: ../contents/ui/MixerItem.qml
+msgid "Speaker"
+msgstr "Hoparlör"
+
+#: ../contents/ui/MixerItem.qml
+msgid "HDMI"
+msgstr "HDMI"
+
+#: ../contents/ui/MixerItem.qml
+msgid "Name"
+msgstr "İsim"
+
+#: ../contents/ui/MixerItem.qml
+msgid "Description"
+msgstr "Açıklama"
+
+#: ../contents/ui/MixerItem.qml
+msgid "Volume"
+msgstr "Ses Düzeyi"
+
+#: ../contents/ui/MixerItem.qml
+msgid "Port"
+msgstr "Giriş"
+
+#: ../contents/ui/MixerItem.qml
+msgid "Device"
+msgstr "Cihaz"
+
+#: ../contents/ui/MixerItem.qml
+msgid "Is default device"
+msgstr "Varsayılan Cihaz"
+
+#: ../contents/ui/MixerItem.qml
+msgid "Make default device"
+msgstr "Varsayılan Cihaz Yap"
+
+#: ../contents/ui/MixerItem.qml
+msgid "Volume Boost (150% Volume)"
+msgstr "Ses Düzeyi Arttırma (%150 Ses)"
+
+#: ../contents/ui/MixerItem.qml
+msgid "Show Channels"
+msgstr "Kanalları Göster"
+
+#: ../contents/ui/MixerItem.qml
+msgid "Profile"
+msgstr "Profil"
+
+#: ../contents/ui/MixerItem.qml
+msgid "Echo Cancellation"
+msgstr "Yankı Giderimi"
+
+#: ../contents/ui/MixerItem.qml
+msgid "Listen to Device"
+msgstr "Cihazı Dinle"
+
+#: ../contents/ui/MixerItem.qml
+msgid "Properties"
+msgstr "Özellikler"
